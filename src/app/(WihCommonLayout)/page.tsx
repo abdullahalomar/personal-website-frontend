@@ -1,8 +1,9 @@
+import HeroSection from "@/components/UI/HeroSection/HeroSection";
+
 const page = () => {
   return (
     <div>
-      <p>Welcome to my website</p>
-      <button className="btn btn-primary">Secondary</button>
+      <HeroSection />
     </div>
   );
 };
