@@ -1,11 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-
+"use client";
 import Image from "next/image";
 import heroImage from "@/assets/img/hero-img.png";
 import facebook from "@/assets/icons/facebook.png";
 import twitter from "@/assets/icons/twitter.png";
 import linkedin from "@/assets/icons/linkedin.png";
 import youtube from "@/assets/icons/youtube.png";
+import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
   return (
@@ -15,7 +16,25 @@ const HeroSection = () => {
           <span className="text-white">Hello</span> i'm
         </h1>
         <h1 className="text-6xl mt-2 mb-4 font-bold">Abdullah Al Omar</h1>
-        <h1 className="text-2xl">A Passionate</h1>
+        <div>
+          <TypeAnimation
+            preRenderFirstString={true}
+            sequence={[
+              500,
+              "A Passionate Web Designer", // initially rendered starting point
+              1000,
+              "A Passionate Frontend Developer",
+              1000,
+              "A Passionate Video Creator",
+              1000,
+              "A Passionate App Developer",
+              500,
+            ]}
+            speed={50}
+            style={{ fontSize: "2em", color: "white" }}
+            repeat={Infinity}
+          />
+        </div>
         <button className="uppercase btn bg-blue-400 hover:bg-blue-500 mt-3">
           Say Hello
         </button>

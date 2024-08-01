@@ -6,7 +6,7 @@ import dark from "@/assets/icons/dark-mode.png";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-base-100 sticky lg:px-24 md:px-24 sm:px-10">
+      <div className="navbar bg-blue-200 shadow-sm lg:px-24 md:px-24 sm:px-10">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
