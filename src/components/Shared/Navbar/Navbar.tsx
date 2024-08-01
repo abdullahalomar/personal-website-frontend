@@ -6,7 +6,7 @@ import dark from "@/assets/icons/dark-mode.png";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 sticky lg:px-24 md:px-24 sm:px-10">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,7 +49,7 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="text-xl">Abdullah Al Omar</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -73,12 +73,19 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className="navbar-end">
-          <button>
-            <Image src={light} alt="light mode" width={50} height={50} />
-          </button>
+        <div className="navbar-end gap-4">
+          <div className="">
+            {/* <button>
+            <Image src={light} alt="light mode" width={40} height={40} />
+          </button> */}
+            <button>
+              <Image src={dark} alt="light mode" width={25} height={25} />
+            </button>
+          </div>
 
-          <a className="btn">Download CV</a>
+          <button className="px-3 py-1 rounded-md ring-offset-2 ring-2 ring-blue-400 hover:ring-4">
+            Download CV
+          </button>
         </div>
       </div>
     </div>
