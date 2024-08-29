@@ -6,68 +6,75 @@ import technology from "@/assets/icons/technology.png";
 
 const Passion = () => {
   return (
-    <div className="py-16 bg-[#E2ECF6] px-24">
-      <div className="grid grid-rows-4 grid-flow-col gap-5">
-        <div className="card bg-base-100 w-72 shadow-xl row-start-2 row-span-2">
-          <div className="card-body">
-            <Image
-              src={dedication}
-              height={100}
-              width={100}
-              alt="dedication icon"
-            />
-            <h2 className="card-title text-2xl my-3">Dedication</h2>
-            <p className="text-xl text-gray-500">
-              Seaque ipsa quae ab illo inven tore veritatis et qua si architecto
-              beatae atis et sopno vitae.
-            </p>
+    <>
+      <div className="py-16 bg-[#E2ECF6] w-full px-8 md:px-16 lg:px-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="card bg-base-100 shadow-xl flex flex-col items-center ">
+            <div className="card-body text-center">
+              <Image
+                src={dedication}
+                height={100}
+                width={100}
+                alt="dedication icon"
+              />
+              <h2 className="card-title text-2xl my-3">Dedication</h2>
+              <p className="text-xl text-gray-500">
+                Seaque ipsa quae ab illo inven tore veritatis et qua si
+                architecto beatae atis et sopno vitae.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div className="card bg-base-100 w-72 shadow-xl row-end-3 row-span-2">
-          <div className="card-body">
-            <Image src={smart} height={100} width={100} alt="dedication icon" />
-            <h2 className="card-title text-2xl my-3">Smart Work</h2>
-            <p className="text-xl text-gray-500">
-              Seaque ipsa quae ab illo inven tore veritatis et qua si architecto
-              beatae atis et sopno vitae.
-            </p>
+          <div className="card bg-base-100 shadow-xl flex flex-col items-center ">
+            <div className="card-body text-center">
+              <Image
+                src={smart}
+                height={100}
+                width={100}
+                alt="smart work icon"
+              />
+              <h2 className="card-title text-2xl my-3">Smart Work</h2>
+              <p className="text-xl text-gray-500">
+                Seaque ipsa quae ab illo inven tore veritatis et qua si
+                architecto beatae atis et sopno vitae.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div className="card bg-base-100 w-72 shadow-xl row-start-2 row-span-2">
-          <div className="card-body">
-            <Image
-              src={collaboration}
-              height={100}
-              width={100}
-              alt="dedication icon"
-            />
-            <h2 className="card-title text-2xl my-3">Collaboration</h2>
-            <p className="text-xl text-gray-500">
-              Seaque ipsa quae ab illo inven tore veritatis et qua si architecto
-              beatae atis et sopno vitae.
-            </p>
+          <div className="card bg-base-100 shadow-xl flex flex-col items-center ">
+            <div className="card-body text-center">
+              <Image
+                src={collaboration}
+                height={100}
+                width={100}
+                alt="collaboration icon"
+              />
+              <h2 className="card-title text-2xl my-3">Collaboration</h2>
+              <p className="text-xl text-gray-500">
+                Seaque ipsa quae ab illo inven tore veritatis et qua si
+                architecto beatae atis et sopno vitae.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div className="card bg-base-100 w-72 shadow-xl row-end-3 row-span-2">
-          <div className="card-body">
-            <Image
-              src={technology}
-              height={100}
-              width={100}
-              alt="dedication icon"
-            />
-            <h2 className="card-title text-2xl my-3">Technology</h2>
-            <p className="text-xl text-gray-500">
-              Seaque ipsa quae ab illo inven tore veritatis et qua si architecto
-              beatae atis et sopno vitae.
-            </p>
+          <div className="card bg-base-100 shadow-xl flex flex-col items-center ">
+            <div className="card-body text-center">
+              <Image
+                src={technology}
+                height={100}
+                width={100}
+                alt="technology icon"
+              />
+              <h2 className="card-title text-2xl my-3">Technology</h2>
+              <p className="text-xl text-gray-500">
+                Seaque ipsa quae ab illo inven tore veritatis et qua si
+                architecto beatae atis et sopno vitae.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

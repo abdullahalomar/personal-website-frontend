@@ -1,3 +1,4 @@
+import About from "@/components/UI/About/About";
 import HeroSection from "@/components/UI/HeroSection/HeroSection";
 import Passion from "@/components/UI/Passion/Passion";
 
@@ -7,6 +8,7 @@ const page = () => {
       <div className="px-24"></div>
       <HeroSection />
       <Passion />
+      <About />
     </div>
   );
 };
