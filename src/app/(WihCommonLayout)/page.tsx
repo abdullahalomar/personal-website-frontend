@@ -1,6 +1,8 @@
 import About from "@/components/UI/About/About";
 import HeroSection from "@/components/UI/HeroSection/HeroSection";
 import Passion from "@/components/UI/Passion/Passion";
+import ProjectPage from "./projects/page";
+import MarqueText from "@/components/UI/MarqueText/MarqueText";
 
 const page = () => {
   return (
@@ -9,6 +11,8 @@ const page = () => {
       <HeroSection />
       <Passion />
       <About />
+      <MarqueText />
+      <ProjectPage />
     </div>
   );
 };
