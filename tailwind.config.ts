@@ -27,6 +27,9 @@ const config: Config = {
           neutral: "#3d4451",
           "base-100": "#ffffff",
         },
+        fontFamily: {
+          jost: ["Jost", "sans-serif"],
+        },
       },
       "dark",
       "light",

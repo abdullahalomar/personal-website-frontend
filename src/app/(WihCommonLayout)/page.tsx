@@ -1,8 +1,8 @@
-import About from "@/components/UI/About/About";
 import HeroSection from "@/components/UI/HeroSection/HeroSection";
 import Passion from "@/components/UI/Passion/Passion";
 import ProjectPage from "./projects/page";
 import MarqueText from "@/components/UI/MarqueText/MarqueText";
+import AboutPage from "./about/page";
 
 const page = () => {
   return (
@@ -10,7 +10,7 @@ const page = () => {
       <div className="px-24"></div>
       <HeroSection />
       <Passion />
-      <About />
+      <AboutPage />
       <MarqueText />
       <ProjectPage />
     </div>
