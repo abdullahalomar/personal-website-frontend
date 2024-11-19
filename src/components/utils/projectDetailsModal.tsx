@@ -1,4 +1,4 @@
-import "./projectDetailsModal.css";
+// import "./projectDetailsModal.css";
 
 const projectDetailsModal = ({ isOpen, onClose, children }: any) => {
   if (!isOpen) return null;
