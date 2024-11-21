@@ -1,7 +1,6 @@
 "use client";
 
 import Marquee, { Motion, randomIntFromInterval } from "react-marquee-slider";
-import times from "lodash/times";
 import Image from "next/image";
 
 const Skill = () => {
@@ -21,6 +20,11 @@ const Skill = () => {
   ];
   return (
     <div>
+      <div className="text-center mb-16">
+        <p className="text-2xl text-blue-500">My Skills</p>
+        <h1 className="text-5xl font-bold text-center">Growing Over Times</h1>
+      </div>
+
       <div>
         <div style={{ height: "500px" }}>
           <Marquee
@@ -42,13 +46,12 @@ const Skill = () => {
                 <Image
                   src={src}
                   alt={`Skill ${index + 1}`}
-                  height={10}
-                  width={10}
+                  height={100} // Increase size
+                  width={100} // Increase size
                   style={{
-                    width: "50px",
-                    height: "50px",
-                    // borderRadius: "50%",
-                    objectFit: "cover",
+                    width: "100px", // Ensure consistency
+                    height: "100px", // Ensure consistency
+                    objectFit: "contain", // 'contain' keeps the aspect ratio
                   }}
                 />
               </Motion>
@@ -56,7 +59,6 @@ const Skill = () => {
           </Marquee>
         </div>
       </div>
-      ;
     </div>
   );
 };
