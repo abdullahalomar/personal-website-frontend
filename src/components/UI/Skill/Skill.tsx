@@ -26,7 +26,7 @@ const Skill = () => {
       </div>
 
       <div>
-        <div style={{ height: "500px" }}>
+        {/* <div style={{ height: "500px" }}>
           <Marquee velocity={12} resetAfterTries={200} scatterRandomly>
             {images.map((src, index) => (
               <Motion
@@ -52,7 +52,7 @@ const Skill = () => {
               </Motion>
             ))}
           </Marquee>
-        </div>
+        </div> */}
       </div>
     </div>
   );
