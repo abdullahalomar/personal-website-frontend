@@ -27,12 +27,7 @@ const Skill = () => {
 
       <div>
         <div style={{ height: "500px" }}>
-          <Marquee
-            velocity={12}
-            minScale={0.7}
-            resetAfterTries={200}
-            scatterRandomly
-          >
+          <Marquee velocity={12} resetAfterTries={200} scatterRandomly>
             {images.map((src, index) => (
               <Motion
                 key={`child-${index}`}
