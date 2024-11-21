@@ -1,4 +1,3 @@
-/* eslint-disable react/no-children-prop */
 "use client";
 
 import Marquee, { Motion, randomIntFromInterval } from "react-marquee-slider";
@@ -23,7 +22,7 @@ const Skill = () => {
     <div>
       <div className="text-center mb-16">
         <p className="text-2xl text-blue-500">My Skills</p>
-        <h1 className="text-5xl font-bold text-center">Growing Over Times</h1>
+        <h1 className="text-5xl font-bold">Growing Over Times</h1>
       </div>
 
       <div>
@@ -43,12 +42,6 @@ const Skill = () => {
                 }
                 velocity={10}
                 radius={50}
-                children={undefined}
-                backgroundColors={{
-                  earth: "",
-                  solarSystem: "",
-                  buffer: "",
-                }}
               >
                 <Image
                   src={src}

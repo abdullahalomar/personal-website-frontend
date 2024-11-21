@@ -4,6 +4,7 @@ import ProjectPage from "./projects/page";
 import MarqueText from "@/components/UI/MarqueText/MarqueText";
 import AboutPage from "./about/page";
 import Skill from "@/components/UI/Skill/Skill";
+import Education from "@/components/UI/Education/Education";
 
 const page = () => {
   return (
@@ -15,6 +16,7 @@ const page = () => {
       <MarqueText />
       <ProjectPage />
       <Skill />
+      <Education />
     </div>
   );
 };
