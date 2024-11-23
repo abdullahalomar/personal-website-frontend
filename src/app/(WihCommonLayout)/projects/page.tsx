@@ -28,7 +28,7 @@ const ProjectPage = () => {
       </div>
       <div>
         <div className="flex w-full flex-col">
-          <div className="card bg-base-200 p-4 rounded-box">
+          <div className="card p-4 rounded-box bg-gradient-to-r from-blue-300">
             <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-10 md:gap-0 justify-between">
               <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-3 md:gap-16 justify-between items-center">
                 <div>
@@ -74,8 +74,9 @@ const ProjectPage = () => {
               </div>
             </div>
           </div>
+
           <div className="divider"></div>
-          <div className="card bg-base-200 p-4 rounded-box">
+          <div className="card p-4 rounded-box bg-gradient-to-r from-blue-300">
             <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-10 md:gap-0 justify-between">
               <div className="flex flex-col md:flex-row gap-3 md:gap-16 justify-between items-center">
                 <div>
@@ -121,8 +122,9 @@ const ProjectPage = () => {
               </div>
             </div>
           </div>
+
           <div className="divider"></div>
-          <div className="card bg-base-200 p-4 rounded-box">
+          <div className="card p-4 rounded-box bg-gradient-to-r from-blue-300">
             <div className="flex flex-col md:flex-row gap-10 md:gap-0 justify-between">
               <div className="flex flex-col md:flex-row gap-3 md:gap-16 justify-between items-center">
                 <div>

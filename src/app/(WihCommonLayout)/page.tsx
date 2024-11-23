@@ -5,6 +5,7 @@ import MarqueText from "@/components/UI/MarqueText/MarqueText";
 import AboutPage from "./about/page";
 import Skill from "@/components/UI/Skill/Skill";
 import Education from "@/components/UI/Education/Education";
+import Award from "@/components/UI/Award/Award";
 
 const page = () => {
   return (
@@ -15,8 +16,9 @@ const page = () => {
       <AboutPage />
       <MarqueText />
       <ProjectPage />
-      <Skill />
       <Education />
+      {/* <Skill /> */}
+      <Award />
     </div>
   );
 };
