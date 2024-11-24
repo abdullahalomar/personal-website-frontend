@@ -12,17 +12,17 @@ const Award = () => {
         <div className="flex w-full flex-col">
           <div className="divider"></div>
           <div className="card rounded-box grid h-20">
-            <div className="flex justify-between">
+            <div className="flex justify-between items-baseline">
               <div>
                 <Image src={coursera} height={100} width={100} alt="" />
               </div>
               <div>
                 <p className="text-2xl font-bold">Developer of the Year</p>
-                <p className="text-gray-400">2021</p>
+                <p className="text-gray-400 text-xl">2021</p>
               </div>
               <div>
                 <p className="text-2xl font-bold">Dev Internatioal</p>
-                <p>London, England</p>
+                <p className="text-gray-400 text-xl">London, England</p>
               </div>
               <div>
                 <p>
@@ -33,9 +33,50 @@ const Award = () => {
             </div>
           </div>
           <div className="divider"></div>
-          <div className="card rounded-box grid h-20 place-items-center">
-            content
+          <div className="card rounded-box grid h-20">
+            <div className="flex justify-between items-baseline">
+              <div>
+                <Image src={coursera} height={100} width={100} alt="" />
+              </div>
+              <div>
+                <p className="text-2xl font-bold">Developer of the Year</p>
+                <p className="text-gray-400 text-xl">2021</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold">Dev Internatioal</p>
+                <p className="text-gray-400 text-xl">London, England</p>
+              </div>
+              <div>
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium dolore.
+                </p>
+              </div>
+            </div>
           </div>
+          <div className="divider"></div>
+          <div className="card rounded-box grid h-20">
+            <div className="flex justify-between items-baseline">
+              <div>
+                <Image src={coursera} height={100} width={100} alt="" />
+              </div>
+              <div>
+                <p className="text-2xl font-bold">Developer of the Year</p>
+                <p className="text-gray-400 text-xl">2021</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold">Dev Internatioal</p>
+                <p className="text-gray-400 text-xl">London, England</p>
+              </div>
+              <div>
+                <p className="text-md">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium dolore.
+                </p>
+              </div>
+            </div>
+          </div>
+          <hr className="mt-4" />
         </div>
       </div>
     </div>

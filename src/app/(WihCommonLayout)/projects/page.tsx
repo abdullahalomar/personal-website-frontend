@@ -44,7 +44,7 @@ const ProjectPage = () => {
               <div className="flex items-center gap-4 md:gap-32 justify-between">
                 <div>
                   <Image
-                    className="max-w-80 w-full rounded-xl transform transition-transform duration-300 hover:rotate-12"
+                    className="max-w-80 w-full rounded-xl transform transition-transform scale-75 hover:scale-100 skew-y-3 duration-300 hover:rotate-[17deg]"
                     src={project1}
                     alt=""
                     height={300}
@@ -92,7 +92,7 @@ const ProjectPage = () => {
               <div className="flex items-center gap-4 md:gap-32 justify-between">
                 <div>
                   <Image
-                    className="max-w-80 w-full rounded-xl transform transition-transform duration-300 hover:rotate-12"
+                    className="max-w-80 w-full rounded-xl transform transition-transform scale-75 hover:scale-100 skew-y-3 duration-300 hover:rotate-[17deg]"
                     src={project1}
                     alt=""
                     height={300}
@@ -140,7 +140,7 @@ const ProjectPage = () => {
               <div className="flex items-center gap-4 md:gap-32 justify-between">
                 <div>
                   <Image
-                    className="max-w-80 w-full rounded-xl transform transition-transform duration-300 hover:rotate-12"
+                    className="max-w-80 w-full rounded-xl transform transition-transform scale-75 hover:scale-100 skew-y-3 duration-300 hover:rotate-[17deg]"
                     src={project1}
                     alt=""
                     height={300}
