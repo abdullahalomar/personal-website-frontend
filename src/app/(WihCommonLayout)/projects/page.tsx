@@ -28,11 +28,13 @@ const ProjectPage = () => {
       </div>
       <div>
         <div className="flex w-full flex-col">
-          <div className="card p-4 rounded-box bg-gradient-to-r from-blue-300">
+          <div className="card p-4 rounded-box ring-offset-2 ring-2 bg-teal-200 hover:bg-sky-300">
             <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-10 md:gap-0 justify-between">
               <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-3 md:gap-16 justify-between items-center">
                 <div>
-                  <h2 className="uppercase text-xl">Web Design</h2>
+                  <h2 className="uppercase text-xl text-slate-400">
+                    Web Design
+                  </h2>
                 </div>
                 <div>
                   <h1 className="text-4xl font-bold">
@@ -76,11 +78,13 @@ const ProjectPage = () => {
           </div>
 
           <div className="divider"></div>
-          <div className="card p-4 rounded-box bg-gradient-to-r from-blue-300">
+          <div className="card p-4 rounded-box ring-offset-2 ring-2 bg-teal-200 hover:bg-sky-300">
             <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-10 md:gap-0 justify-between">
               <div className="flex flex-col md:flex-row gap-3 md:gap-16 justify-between items-center">
                 <div>
-                  <h2 className="uppercase text-xl">Web Design</h2>
+                  <h2 className="uppercase text-xl text-slate-400">
+                    Web Design
+                  </h2>
                 </div>
                 <div>
                   <h1 className="text-4xl font-bold">
@@ -124,11 +128,13 @@ const ProjectPage = () => {
           </div>
 
           <div className="divider"></div>
-          <div className="card p-4 rounded-box bg-gradient-to-r from-blue-300">
+          <div className="card p-4 rounded-box ring-offset-2 ring-2 bg-teal-200 hover:bg-sky-300">
             <div className="flex flex-col md:flex-row gap-10 md:gap-0 justify-between">
               <div className="flex flex-col md:flex-row gap-3 md:gap-16 justify-between items-center">
                 <div>
-                  <h2 className="uppercase text-xl">Web Design</h2>
+                  <h2 className="uppercase text-xl text-slate-400">
+                    Web Design
+                  </h2>
                 </div>
                 <div>
                   <h1 className="text-4xl font-bold">
