@@ -1,20 +1,15 @@
-"use client";
-
-import { useState } from "react";
 import { FaPhone } from "react-icons/fa6";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
 const ContactPage = () => {
-  const [isFocused, setIsFocused] = useState(false);
-
   return (
     <div className="px-8 md:px-16 lg:px-24 mb-20">
       <div className="text-center mb-16">
         <p className="text-2xl text-blue-500 uppercase">Contact me</p>
         <h1 className="text-5xl font-bold">Let’s Start A New Conversation</h1>
       </div>
-      <div className="flex justify-between">
+      <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-8 justify-between">
         <div>
           <ul>
             <li className="flex items-center gap-7">
@@ -50,27 +45,27 @@ const ContactPage = () => {
             </li>
           </ul>
         </div>
-        <form className="">
+        <form className="form-control">
           <div className="grid grid-cols-2 gap-4 mb-4">
             <input
               type="text"
               placeholder="Name"
-              className="input input-bordered input-info w-full "
+              className="input input-bordered input-info input-lg "
             />
             <input
               type="text"
               placeholder="Email"
-              className="input input-bordered input-info w-full "
+              className="input input-bordered input-info input-lg "
             />
             <input
               type="text"
               placeholder="Phone"
-              className="input input-bordered input-info w-full "
+              className="input input-bordered input-info input-lg"
             />
             <input
               type="text"
               placeholder="Subject"
-              className="input input-bordered input-info w-full "
+              className="input input-bordered input-info input-lg"
             />
           </div>
 
