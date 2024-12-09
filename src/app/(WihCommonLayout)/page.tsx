@@ -7,6 +7,7 @@ import Skill from "@/components/UI/Skill/Skill";
 import Education from "@/components/UI/Education/Education";
 import Award from "@/components/UI/Award/Award";
 import Testimonial from "@/components/UI/Testimonial/Testimonial";
+import ContactPage from "./contact/page";
 
 const page = () => {
   return (
@@ -22,6 +23,7 @@ const page = () => {
       <Award />
       <MarqueText />
       {/* <Testimonial /> */}
+      <ContactPage />
     </div>
   );
 };
