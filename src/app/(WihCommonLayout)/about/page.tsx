@@ -9,13 +9,13 @@ const AboutPage = () => {
         <div className="relative">
           <Image src={profile} height={600} width={600} alt="about image" />
 
-          <button className="uppercase absolute -bottom-5 -right-5 lg:-bottom-10 lg:-right-10 bg-blue-400 py-3 px-6 lg:py-5 lg:px-8 flex gap-3 text-sm lg:text-base">
+          <button className="uppercase absolute -bottom-5 -right-5 lg:-bottom-10 lg:-right-10 bg-secondary py-3 px-6 lg:py-5 lg:px-8 flex gap-3 text-sm lg:text-base">
             Download CV
             <Image src={download} height={20} width={20} alt="download" />
           </button>
         </div>
         <div className="mt-10 lg:mt-20 sm:mt-20">
-          <p className="uppercase text-lg sm:text-xl text-blue-500">About me</p>
+          <p className="uppercase text-lg sm:text-xl text-primary">About me</p>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl my-5">
             I Develop Systems that Work
           </h1>

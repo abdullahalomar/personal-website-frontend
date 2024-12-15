@@ -21,7 +21,7 @@ const Skill = () => {
   return (
     <div>
       <div className="text-center mb-16">
-        <p className="text-2xl text-blue-500">My Skills</p>
+        <p className="text-2xl text-primary">My Skills</p>
         <h1 className="text-5xl font-bold">Growing Over Times</h1>
       </div>
 

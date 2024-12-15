@@ -12,12 +12,14 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row justify-between items-center text-center pt-10 sm:pt-10 md:pt-8 lg:pt-0 bg-gradient-to-r from-[#b1c5ef] to-[#a9c4ec] px-24">
+    <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row justify-between items-center text-center pt-10 sm:pt-10 md:pt-8 lg:pt-0 px-24  bg-gradient-to-r from-[#83B4FF] via-[#5A72A0] to-[#FDFFE2]">
       <div className="text-start">
         <h1 className="uppercase text-3xl">
           <span className="text-white">Hello</span> i'm
         </h1>
-        <h1 className="text-6xl mt-2 mb-4 font-bold">Abdullah Al Omar</h1>
+        <h1 className="text-6xl mt-2 mb-4 font-bold text-primary">
+          Abdullah Al Omar
+        </h1>
         <div>
           <TypeAnimation
             preRenderFirstString={true}
@@ -37,10 +39,15 @@ const HeroSection = () => {
             repeat={Infinity}
           />
         </div>
-        <TbArrowBigDownLineFilled className="animate-bounce" fontSize={20} />
-        <button className="px-10 py-4 uppercase hover:text-white bg-blue-400 mt-3 transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-cyan-500 duration-150">
-          Say Hello
-        </button>
+
+        <div className="mt-3">
+          <TbArrowBigDownLineFilled className="animate-bounce" fontSize={20} />
+          <div className="bg-slate-600 w-[191px] pb-1.5 rounded-md">
+            <button className="px-14 py-3 rounded-md uppercase text-white bg-primary hover:bg-slate-600 mt-0">
+              Say Hello
+            </button>
+          </div>
+        </div>
       </div>
       <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row items-center gap-0 sm:gap-0 md:gap-10 lg:gap-10">
         <Image
@@ -52,7 +59,11 @@ const HeroSection = () => {
         />
       </div>
       <div className="flex sm:flex md:flex-col lg:flex-col gap-8">
-        <Link href="#" className="animate-bounce">
+        <Link
+          target="_blank"
+          href="https://www.facebook.com/abdullahalomar2"
+          className="animate-bounce"
+        >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
             className="ring-2 p-1 rounded "
@@ -62,7 +73,11 @@ const HeroSection = () => {
             width={40}
           />
         </Link>
-        <Link href="#" className=" animate-bounce">
+        <Link
+          target="_blank"
+          href="https://github.com/abdullahalomar"
+          className="animate-bounce"
+        >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
             className="ring-2 p-1 rounded "
@@ -72,7 +87,11 @@ const HeroSection = () => {
             width={40}
           />
         </Link>
-        <Link href="#" className="animate-bounce">
+        <Link
+          target="_blank"
+          href="www.linkedin.com/in/omar17"
+          className="animate-bounce"
+        >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
             className="ring-2 p-1 rounded "
@@ -82,7 +101,11 @@ const HeroSection = () => {
             width={40}
           />
         </Link>
-        <Link href="#" className=" animate-bounce">
+        <Link
+          target="_blank"
+          href="https://www.youtube.com/c/AbdullahAlOmar"
+          className=" animate-bounce"
+        >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
             className="ring-2 p-1 rounded "

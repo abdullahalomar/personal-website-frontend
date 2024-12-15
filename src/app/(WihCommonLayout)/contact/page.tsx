@@ -6,14 +6,14 @@ const ContactPage = () => {
   return (
     <div className="px-8 md:px-16 lg:px-24 mb-20">
       <div className="text-center mb-16">
-        <p className="text-2xl text-blue-500 uppercase">Contact me</p>
+        <p className="text-2xl text-primary uppercase">Contact me</p>
         <h1 className="text-5xl font-bold">Let’s Start A New Conversation</h1>
       </div>
       <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-8 justify-between">
         <div>
           <ul>
             <li className="flex items-center gap-7">
-              <div className="bg-blue-400 p-5 rounded-full">
+              <div className="bg-secondary p-5 rounded-full">
                 <FaLocationDot fontSize={25} color="white" />
               </div>
               <div>
@@ -23,7 +23,7 @@ const ContactPage = () => {
             </li>
 
             <li className="flex items-center gap-7 my-7">
-              <div className="bg-blue-400 p-5 rounded-full">
+              <div className="bg-secondary p-5 rounded-full">
                 <FaPhone fontSize={25} color="white" />
               </div>
               <div>
@@ -33,7 +33,7 @@ const ContactPage = () => {
             </li>
 
             <li className="flex items-center gap-7">
-              <div className="bg-blue-400 p-5 rounded-full">
+              <div className="bg-secondary p-5 rounded-full">
                 <MdEmail fontSize={25} color="white" />
               </div>
               <div>
@@ -73,7 +73,7 @@ const ContactPage = () => {
             className="textarea textarea-info textarea-lg w-full"
             placeholder="Start writing message here"
           ></textarea>
-          <button className="btn bg-blue-400 hover:bg-blue-500 text-lg text-white mt-4">
+          <button className="btn bg-secondary hover:bg-primary text-lg text-white mt-4">
             Send message
           </button>
         </form>

@@ -7,7 +7,7 @@ const Education = () => {
     <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-10 px-8 md:px-16 lg:px-24 my-28">
       <div>
         <div className="mb-8">
-          <p className="text-2xl text-blue-500 uppercase mb-2">Education</p>
+          <p className="text-2xl text-primary uppercase mb-2">Education</p>
           <h1 className="text-5xl font-bold">My Education</h1>
           <p className="text-md py-8">
             Sed ut perspiciatis unde omnis iste natus kobita tumi sopno charini
@@ -18,10 +18,10 @@ const Education = () => {
         <div>
           <div className="flex items-center gap-3 group">
             {/* Icon */}
-            <div className="p-3 bg-blue-400 rounded-md duration-300 group-hover:bg-transparent group-hover:border group-hover:border-blue-400">
+            <div className="p-3 bg-secondary rounded-md duration-300 group-hover:bg-transparent group-hover:border group-hover:border-blue-400">
               <PiGraduationCap
                 fontSize={38}
-                className="transition-colors duration-300 transition-transform group-hover:rotate-[-90deg]  group-hover:text-blue-500"
+                className="transition-colors duration-300 transition-transform group-hover:rotate-[-90deg]  group-hover:text-primary"
               />
             </div>
 
@@ -39,10 +39,10 @@ const Education = () => {
 
           <div className="flex items-center gap-3 my-16 group">
             {/* Icon */}
-            <div className="p-3 bg-blue-400 rounded-md duration-300 group-hover:bg-transparent group-hover:border group-hover:border-blue-400">
+            <div className="p-3 bg-secondary rounded-md duration-300 group-hover:bg-transparent group-hover:border group-hover:border-blue-400">
               <PiGraduationCap
                 fontSize={38}
-                className="transition-colors duration-300 transition-transform group-hover:rotate-[-90deg]  group-hover:text-blue-500"
+                className="transition-colors duration-300 transition-transform group-hover:rotate-[-90deg]  group-hover:text-primary"
               />
             </div>
 
@@ -60,10 +60,10 @@ const Education = () => {
 
           <div className="flex items-center gap-3 group">
             {/* Icon */}
-            <div className="p-3 bg-blue-400 rounded-md duration-300 group-hover:bg-transparent group-hover:border group-hover:border-blue-400">
+            <div className="p-3 bg-secondary rounded-md duration-300 group-hover:bg-transparent group-hover:border group-hover:border-blue-400">
               <PiGraduationCap
                 fontSize={38}
-                className="transition-colors duration-300 transition-transform group-hover:rotate-[-90deg]  group-hover:text-blue-500"
+                className="transition-colors duration-300 transition-transform group-hover:rotate-[-90deg]  group-hover:text-primary"
               />
             </div>
 

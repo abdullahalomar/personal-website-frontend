@@ -20,7 +20,7 @@ const Testimonial = () => {
     <div className="ps-8 md:ps-16 lg:ps-24">
       <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row justify-between">
         <div>
-          <p className="text-2xl text-blue-500">Testimonials</p>
+          <p className="text-2xl text-primary">Testimonials</p>
           <h1 className="text-5xl font-bold">Give your valuable comments</h1>
           <div className="flex gap-20 pt-10">
             <div>

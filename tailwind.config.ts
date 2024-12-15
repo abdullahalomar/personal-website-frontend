@@ -21,10 +21,10 @@ const config: Config = {
     themes: [
       {
         mytheme: {
-          primary: "#3b82f6",
-          secondary: "rgb(96 165 250)",
-          accent: "#37cdbe",
-          neutral: "#3d4451",
+          primary: "#1A2130",
+          secondary: "#83B4FF", //2B2E4A
+          accent: "#903749",
+          neutral: "#53354A",
           "base-100": "#ffffff",
         },
         fontFamily: {
