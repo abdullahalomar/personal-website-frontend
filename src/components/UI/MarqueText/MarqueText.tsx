@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 
 const MarqueText = () => {
   return (
-    <div className="my-36">
+    <div className="my-28">
       <Marquee className="pb-4" gradient direction="right">
         <p className="text-6xl font-sans">
           I’m Open for new projects * Let’s Work Together.

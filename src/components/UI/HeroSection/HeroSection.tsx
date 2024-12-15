@@ -9,6 +9,7 @@ import youtube from "@/assets/icons/youtube.png";
 import { TypeAnimation } from "react-type-animation";
 import { TbArrowBigDownLineFilled } from "react-icons/tb";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -49,7 +50,16 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row items-center gap-0 sm:gap-0 md:gap-10 lg:gap-10">
+      <motion.div
+        className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row items-center gap-0 sm:gap-0 md:gap-10 lg:gap-10"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
         <Image
           src={heroImage}
           className="mt-5"
@@ -57,7 +67,7 @@ const HeroSection = () => {
           height={450}
           width={450}
         />
-      </div>
+      </motion.div>
       <div className="flex sm:flex md:flex-col lg:flex-col gap-8">
         <Link
           target="_blank"
