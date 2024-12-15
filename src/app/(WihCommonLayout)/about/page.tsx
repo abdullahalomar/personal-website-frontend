@@ -1,6 +1,7 @@
 import profile from "@/assets/img/profile-image-web.png";
 import download from "@/assets/icons/download.png";
 import Image from "next/image";
+import { FaDownload } from "react-icons/fa6";
 
 const AboutPage = () => {
   return (
@@ -9,9 +10,9 @@ const AboutPage = () => {
         <div className="relative">
           <Image src={profile} height={600} width={600} alt="about image" />
 
-          <button className="uppercase absolute -bottom-5 -right-5 lg:-bottom-10 lg:-right-10 bg-secondary py-3 px-6 lg:py-5 lg:px-8 flex gap-3 text-sm lg:text-base">
+          <button className="uppercase absolute -bottom-5 -right-5 lg:-bottom-10 lg:-right-10 bg-secondary py-3 px-6 lg:py-5 lg:px-8 flex gap-3 text-sm lg:text-base transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary hover:text-white duration-300 rounded-md">
             Download CV
-            <Image src={download} height={20} width={20} alt="download" />
+            <FaDownload fontSize={20} />
           </button>
         </div>
         <div className="mt-10 lg:mt-20 sm:mt-20">

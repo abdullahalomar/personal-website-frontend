@@ -9,7 +9,7 @@ const Passion = () => {
     <>
       <div className="py-16 bg-[#E2ECF6] w-full px-8 md:px-16 lg:px-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <div className="card bg-base-100 shadow-xl flex flex-col items-center ">
+          <div className="card bg-base-100 shadow-xl flex flex-col items-center hover:translate-x-4 hover:scale-100 hover:duration-700 hover:ease-out">
             <div className="card-body text-center">
               <Image
                 src={dedication}
@@ -25,7 +25,7 @@ const Passion = () => {
             </div>
           </div>
 
-          <div className="card bg-base-100 shadow-xl flex flex-col items-center ">
+          <div className="card bg-base-100 shadow-xl flex flex-col items-center hover:translate-x-4 hover:scale-100 hover:duration-700 hover:ease-out">
             <div className="card-body text-center">
               <Image
                 src={smart}
@@ -41,7 +41,7 @@ const Passion = () => {
             </div>
           </div>
 
-          <div className="card bg-base-100 shadow-xl flex flex-col items-center ">
+          <div className="card bg-base-100 shadow-xl flex flex-col items-center hover:translate-x-4 hover:scale-100 hover:duration-700 hover:ease-out">
             <div className="card-body text-center">
               <Image
                 src={collaboration}
@@ -57,7 +57,7 @@ const Passion = () => {
             </div>
           </div>
 
-          <div className="card bg-base-100 shadow-xl flex flex-col items-center ">
+          <div className="card bg-base-100 shadow-xl flex flex-col items-center hover:translate-x-4 hover:scale-100 hover:duration-700 hover:ease-out">
             <div className="card-body text-center">
               <Image
                 src={technology}

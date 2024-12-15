@@ -3,7 +3,7 @@
 import Image from "next/image";
 import heroImage from "@/assets/img/hero-img.png";
 import facebook from "@/assets/icons/facebook.png";
-import twitter from "@/assets/icons/twitter.png";
+import github from "@/assets/icons/github.png";
 import linkedin from "@/assets/icons/linkedin.png";
 import youtube from "@/assets/icons/youtube.png";
 import { TypeAnimation } from "react-type-animation";
@@ -81,7 +81,7 @@ const HeroSection = () => {
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
             className="ring-2 p-1 rounded "
-            src={twitter}
+            src={github}
             alt="facebook icon"
             height={40}
             width={40}
