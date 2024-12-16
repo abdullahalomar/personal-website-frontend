@@ -6,7 +6,6 @@ import Image from "next/image";
 
 const BlogsPage = () => {
   const settings = {
-    dots: true,
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -47,7 +46,7 @@ const BlogsPage = () => {
 
   return (
     <div className="bg-[#e6f1fc] px-4 sm:px-8 md:px-16 lg:px-24">
-      <div className="py-8 md:py-16 text-center">
+      <div className="py-8 md:py-16">
         <p className="text-lg md:text-2xl text-secondary uppercase">
           Get Updates
         </p>
