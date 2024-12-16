@@ -3,31 +3,37 @@ import profile from "@/assets/img/profile-image-web.png";
 import Image from "next/image";
 import { FaDownload } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const AboutPage = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <div>
-      <div className="flex flex-col lg:flex-row justify-between items-center lg:gap-28 gap-10 px-6 sm:px-12 lg:px-24 my-14">
-        <motion.div
-          className="relative"
-          initial={{ x: "-200%" }}
-          animate={{ x: "calc(-2%)" }}
-          transition={{
-            duration: 2,
-            type: "spring",
-            stiffness: 400,
-            damping: 10,
-          }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <Image src={profile} height={600} width={600} alt="about image" />
+      <div className="flex flex-col lg:flex-row justify-between items-center lg:gap-28 gap-10 px-6 sm:px-12 lg:px-24 mt-14 mb-20">
+        <div className="relative" data-aos="zoom-out-right">
+          <Image
+            className="hover:-translate-y-6 transition duration-700"
+            src={profile}
+            height={600}
+            width={600}
+            alt="about image"
+          />
 
-          <button className="uppercase absolute -bottom-5 -right-5 lg:-bottom-10 lg:-right-10 bg-secondary py-3 px-6 lg:py-5 lg:px-8 flex gap-3 text-sm lg:text-base transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary hover:text-white duration-300 rounded-md">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="uppercase absolute -bottom-5 -right-5 lg:-bottom-10 lg:-right-10 bg-secondary py-3 px-6 lg:py-5 lg:px-8 flex gap-3 text-sm lg:text-base hover:bg-primary hover:text-white rounded-md"
+          >
             Download CV
             <FaDownload fontSize={20} />
-          </button>
-        </motion.div>
+          </motion.button>
+        </div>
         <div className="mt-10 lg:mt-20 sm:mt-20">
           <p className="uppercase text-lg sm:text-xl text-primary">About me</p>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl my-5">

@@ -1,12 +1,40 @@
+"use client";
+import { useState, useEffect } from "react";
 import navItems from "@/components/navItems";
 import Image from "next/image";
 import light from "@/assets/icons/light-mode.png";
 import dark from "@/assets/icons/dark-mode.png";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        // একেবারে টপে থাকলে ব্যাকগ্রাউন্ড ট্রান্সপারেন্ট হবে
+        setIsScrolled(false);
+      } else {
+        // স্ক্রল করলে ব্যাকগ্রাউন্ড প্রাইমারি কালারে পরিবর্তন হবে
+        setIsScrolled(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div>
-      <div className="navbar bg-primary shadow-sm lg:px-24 md:px-24 sm:px-10 sticky-top">
+    <div
+      className={`sticky top-0 z-50 transition-colors duration-1000 ${
+        isScrolled
+          ? "bg-primary"
+          : "bg-gradient-to-r from-[#83B4FF] via-[#5A72A0] to-[#FDFFE2]"
+      }`}
+    >
+      <div className="navbar bg-transparent lg:px-24 md:px-24 sm:px-10">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,7 +55,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content  rounded-box z-[1] mt-3 w-52 p-2 shadow text-white"
+              className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow text-white"
             >
               {navItems.map((item, index) => (
                 <li key={index}>
@@ -47,19 +75,20 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className="navbar-end gap-4">
+        <div className="navbar-end gap-6">
           <div className="">
-            {/* <button>
-            <Image src={light} alt="light mode" width={40} height={40} />
-          </button> */}
             <button>
               <Image src={dark} alt="light mode" width={25} height={25} />
             </button>
           </div>
 
-          <button className="px-3 py-1 rounded-md ring-offset-2 ring-2 ring-blue-400 hover:ring-4 text-white">
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
+            className="px-4 py-1 rounded-md border-2 border-secondary hover:bg-secondary duration-700 text-white uppercase"
+          >
             Download CV
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>

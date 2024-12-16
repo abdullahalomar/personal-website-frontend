@@ -10,11 +10,18 @@ import { TypeAnimation } from "react-type-animation";
 import { TbArrowBigDownLineFilled } from "react-icons/tb";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const HeroSection = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row justify-between items-center text-center pt-10 sm:pt-10 md:pt-8 lg:pt-0 px-24  bg-gradient-to-r from-[#83B4FF] via-[#5A72A0] to-[#FDFFE2]">
-      <div className="text-start">
+      <div className="text-start" data-aos="zoom-out-right">
         <h1 className="uppercase text-3xl">
           <span className="text-white">Hello</span> i'm
         </h1>
@@ -22,17 +29,20 @@ const HeroSection = () => {
           Abdullah Al Omar
         </h1>
         <div>
+          <span className="text-2xl text-primary font-semibold me-3">
+            A Passionate
+          </span>
           <TypeAnimation
             preRenderFirstString={true}
             sequence={[
               500,
-              "A Passionate Web Designer", // initially rendered starting point
+              "Web Designer",
               1000,
-              "A Passionate Frontend Developer",
+              "Frontend Developer",
               1000,
-              "A Passionate Video Creator",
+              "Video Creator",
               1000,
-              "A Passionate App Developer",
+              "App Developer",
               500,
             ]}
             speed={50}
