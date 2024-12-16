@@ -1,14 +1,21 @@
+"use client";
 import Image from "next/image";
 import education from "@/assets/img/low-angle-stacked-books-graduation-cap-ladders-education-day.jpg";
 import { PiGraduationCap } from "react-icons/pi";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Education = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-10 px-8 md:px-16 lg:px-24 my-28">
       <div>
         <div className="mb-8">
-          <p className="text-2xl text-primary uppercase mb-2">Education</p>
-          <h1 className="text-5xl font-bold">My Education</h1>
+          <p className="text-2xl text-secondary uppercase mb-2">Education</p>
+          <h1 className="text-5xl font-semibold">My Education</h1>
           <p className="text-md py-8">
             Sed ut perspiciatis unde omnis iste natus kobita tumi sopno charini
             hoye khbor nio na sit voluptatem accusantium dolore.
@@ -80,7 +87,11 @@ const Education = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div
+        data-aos="fade-left"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+      >
         <Image
           className="rounded-xl max-h-[730px]"
           src={education}

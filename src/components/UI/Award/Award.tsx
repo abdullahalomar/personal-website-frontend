@@ -1,18 +1,25 @@
+"use client";
 import coursera from "@/assets/icons/coursera-wordmark-blue.svg";
 import Image from "next/image";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Award = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div className="px-8 md:px-16 lg:px-24 mb-24">
       <div>
         <div className="text-center mb-12">
-          <p className="text-2xl text-primary">Success Stories</p>
+          <p className="text-2xl text-secondary uppercase">Success Stories</p>
           <h1 className="text-5xl font-bold">Awards & Achivements</h1>
         </div>
         <div className="">
           <div className="divider"></div>
 
-          <div className="rounded-box grid">
+          <div className="rounded-box grid" data-aos="flip-up">
             <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row justify-center md:justify-between items-baseline">
               <div>
                 <Image src={coursera} height={100} width={100} alt="" />
@@ -34,7 +41,7 @@ const Award = () => {
 
           <div className="divider"></div>
 
-          <div className="rounded-box grid">
+          <div className="rounded-box grid" data-aos="flip-up">
             <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row justify-between items-baseline">
               <div>
                 <Image src={coursera} height={100} width={100} alt="" />
@@ -58,7 +65,7 @@ const Award = () => {
 
           <div className="divider"></div>
 
-          <div className="card rounded-box grid h-20">
+          <div className="card rounded-box grid h-20" data-aos="flip-up">
             <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row justify-between items-baseline">
               <div>
                 <Image src={coursera} height={100} width={100} alt="" />

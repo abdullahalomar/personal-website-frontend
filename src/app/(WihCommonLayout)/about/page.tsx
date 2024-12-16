@@ -35,7 +35,9 @@ const AboutPage = () => {
           </motion.button>
         </div>
         <div className="mt-10 lg:mt-20 sm:mt-20">
-          <p className="uppercase text-lg sm:text-xl text-primary">About me</p>
+          <p className="uppercase text-lg sm:text-xl text-secondary">
+            About me
+          </p>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl my-5">
             I Develop Systems that Work
           </h1>

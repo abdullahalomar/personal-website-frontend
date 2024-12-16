@@ -1,12 +1,19 @@
+"use client";
 import { FaPhone } from "react-icons/fa6";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const ContactPage = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div className="px-8 md:px-16 lg:px-24 mb-20">
       <div className="text-center mb-16">
-        <p className="text-2xl text-primary uppercase">Contact me</p>
+        <p className="text-2xl text-secondary uppercase">Contact me</p>
         <h1 className="text-5xl font-bold">Let’s Start A New Conversation</h1>
       </div>
       <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-8 justify-between">
@@ -51,29 +58,43 @@ const ContactPage = () => {
               type="text"
               placeholder="Name"
               className="input input-bordered input-info input-lg "
+              data-aos="fade-up"
+              data-aos-duration="3000"
             />
             <input
               type="text"
               placeholder="Email"
               className="input input-bordered input-info input-lg "
+              data-aos="fade-up"
+              data-aos-duration="3000"
             />
             <input
               type="text"
               placeholder="Phone"
               className="input input-bordered input-info input-lg"
+              data-aos="fade-up"
+              data-aos-duration="2000"
             />
             <input
               type="text"
               placeholder="Subject"
               className="input input-bordered input-info input-lg"
+              data-aos="fade-up"
+              data-aos-duration="2000"
             />
           </div>
 
           <textarea
             className="textarea textarea-info textarea-lg w-full"
             placeholder="Start writing message here"
+            data-aos="fade-up"
+            data-aos-duration="3000"
           ></textarea>
-          <button className="btn bg-secondary hover:bg-primary text-lg text-white mt-4">
+          <button
+            className="btn bg-secondary hover:bg-primary text-lg text-white mt-4"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          >
             Send message
           </button>
         </form>

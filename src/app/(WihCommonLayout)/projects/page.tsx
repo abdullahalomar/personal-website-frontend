@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import project1 from "@/assets/img/mind-map-Thumbnail.png";
 import ProjectDetailsModal from "@/components/utils/projectDetailsModal";
 import { GrView } from "react-icons/gr";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const ProjectPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,15 +22,23 @@ const ProjectPage = () => {
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <div className="px-8 md:px-16 lg:px-24 mb-24">
       <div className="text-center mb-16">
-        <p className="text-2xl text-primary">Portfolio</p>
+        <p className="text-2xl text-secondary uppercase">Portfolio</p>
         <h1 className="text-5xl font-bold">My Recent Work</h1>
       </div>
       <div>
         <div className="flex w-full flex-col">
-          <div className="card p-4 rounded-box ring-offset-2 ring-2 bg-teal-200 hover:bg-sky-300">
+          <div
+            className="card p-4 rounded-box ring-offset-2 ring-2 "
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          >
             <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-10 md:gap-0 justify-between">
               <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-3 md:gap-16 justify-between items-center">
                 <div>
@@ -37,7 +47,7 @@ const ProjectPage = () => {
                   </h2>
                 </div>
                 <div>
-                  <h1 className="text-4xl font-bold">
+                  <h1 className="text-5xl font-medium">
                     Website Design for codeefly
                   </h1>
                 </div>
@@ -78,7 +88,11 @@ const ProjectPage = () => {
           </div>
 
           <div className="divider"></div>
-          <div className="card p-4 rounded-box ring-offset-2 ring-2 bg-teal-200 hover:bg-sky-300">
+          <div
+            className="card p-4 rounded-box ring-offset-2 ring-2 "
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-10 md:gap-0 justify-between">
               <div className="flex flex-col md:flex-row gap-3 md:gap-16 justify-between items-center">
                 <div>
@@ -87,7 +101,7 @@ const ProjectPage = () => {
                   </h2>
                 </div>
                 <div>
-                  <h1 className="text-4xl font-bold">
+                  <h1 className="text-5xl font-medium">
                     Website Design for codeefly
                   </h1>
                 </div>
@@ -128,7 +142,11 @@ const ProjectPage = () => {
           </div>
 
           <div className="divider"></div>
-          <div className="card p-4 rounded-box ring-offset-2 ring-2 bg-teal-200 hover:bg-sky-300">
+          <div
+            className="card p-4 rounded-box ring-offset-2 ring-2 "
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <div className="flex flex-col md:flex-row gap-10 md:gap-0 justify-between">
               <div className="flex flex-col md:flex-row gap-3 md:gap-16 justify-between items-center">
                 <div>
@@ -137,7 +155,7 @@ const ProjectPage = () => {
                   </h2>
                 </div>
                 <div>
-                  <h1 className="text-4xl font-bold">
+                  <h1 className="text-5xl font-medium">
                     Website Design for codeefly
                   </h1>
                 </div>
