@@ -11,7 +11,7 @@ const ContactPage = () => {
     Aos.init();
   }, []);
   return (
-    <div className="px-8 md:px-16 lg:px-24 mb-20">
+    <div className="px-8 md:px-16 lg:px-24 mb-20 bg-slate-500">
       <div className="text-center mb-16">
         <p className="text-2xl text-secondary uppercase">Contact me</p>
         <h1 className="text-5xl font-bold">Let’s Start A New Conversation</h1>
@@ -45,7 +45,7 @@ const ContactPage = () => {
               </div>
               <div>
                 <p className="font-bold text-xl">Email</p>
-                <p className="text-xl text-slate-500">
+                <p className="text-xl text-slate-500 truncate">
                   abdullahalomar048@gmail.com
                 </p>
               </div>

@@ -85,7 +85,7 @@ const Navbar = () => {
           <motion.button
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8 }}
-            className="px-4 py-1 rounded-md border-2 border-secondary hover:bg-secondary duration-700 text-white uppercase"
+            className="hidden sm:block px-4 py-1 rounded-md border-2 border-secondary hover:bg-secondary duration-700 text-white uppercase"
           >
             Download CV
           </motion.button>

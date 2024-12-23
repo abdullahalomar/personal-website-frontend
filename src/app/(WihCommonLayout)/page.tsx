@@ -13,7 +13,7 @@ import BlogsPage from "./blogs/page";
 const page = () => {
   return (
     <div>
-      <div className="px-24"></div>
+      <div className="bg-slate-300"></div>
       <HeroSection />
       <Passion />
       <AboutPage />

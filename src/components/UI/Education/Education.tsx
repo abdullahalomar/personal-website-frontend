@@ -11,7 +11,7 @@ const Education = () => {
     Aos.init();
   }, []);
   return (
-    <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-10 px-8 md:px-16 lg:px-24 my-28">
+    <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-10 px-8 md:px-16 lg:px-24 my-28 bg-slate-500">
       <div>
         <div className="mb-8">
           <p className="text-2xl text-secondary uppercase mb-2">Education</p>
