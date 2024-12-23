@@ -25,7 +25,7 @@ const page = () => {
       <MarqueText />
       {/* <Testimonial /> */}
       <ContactPage />
-      <BlogsPage />
+      {/* <BlogsPage /> */}
     </div>
   );
 };
