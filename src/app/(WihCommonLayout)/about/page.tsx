@@ -14,7 +14,7 @@ const AboutPage = () => {
 
   return (
     <div>
-      <div className="flex flex-col lg:flex-row justify-between items-center lg:gap-28 gap-10 px-6 sm:px-12 lg:px-24 mt-14 mb-20 ">
+      <div className="flex flex-col lg:flex-row justify-between items-center lg:gap-28 gap-10 px-6 sm:px-12 lg:px-24 mt-14 pb-0 md:pb-0 lg:pb-6 xl:pb-12">
         <div className="relative" data-aos="zoom-out-right">
           <Image
             className="hover:-translate-y-6 transition duration-700"

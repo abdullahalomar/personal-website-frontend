@@ -11,7 +11,7 @@ const ContactPage = () => {
     Aos.init();
   }, []);
   return (
-    <div className="px-8 md:px-16 lg:px-24 mb-20 ">
+    <div className="px-8 md:px-16 lg:px-24 mb-20">
       <div className="text-center mb-16">
         <p className="text-2xl text-secondary uppercase">Contact me</p>
         <h1 className="text-5xl font-bold">Let’s Start A New Conversation</h1>
@@ -90,13 +90,14 @@ const ContactPage = () => {
             data-aos="fade-up"
             data-aos-duration="3000"
           ></textarea>
-          <button
-            className="btn bg-secondary hover:bg-primary text-lg text-white mt-4"
-            data-aos="fade-up"
-            data-aos-duration="3000"
-          >
-            Send message
-          </button>
+          {/* data-aos="fade-up" data-aos-duration="3000" */}
+          <div className="mt-3">
+            <div className="bg-primary  w-full pb-1.5 rounded-md">
+              <button className="px-14 py-3 rounded-md uppercase text-white bg-secondary hover:bg-primary transition duration-300 w-full">
+                Send message
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     </div>

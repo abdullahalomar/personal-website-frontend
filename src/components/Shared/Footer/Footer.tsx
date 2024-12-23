@@ -1,13 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="footer p-28 bg-slate-500">
+    <footer className="footer footer-center md:footer lg:footer xl:footer py-20 md:p-28 lg:p-28 xl:p-28">
       <nav>
         <div>
           <h1 className="text-3xl font-semibold">Abdullah Al Omar</h1>
@@ -27,7 +30,12 @@ const Footer = () => {
                 className="input input-primary join-item max-w-80"
               />
               <button className="btn btn-primary join-item">
-                <MdEmail color="#83B4FF" fontSize={20} />
+                <motion.div
+                  whileHover={{ scale: 2.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <MdEmail color="#83B4FF" fontSize={20} />
+                </motion.div>
               </button>
             </div>
           </fieldset>

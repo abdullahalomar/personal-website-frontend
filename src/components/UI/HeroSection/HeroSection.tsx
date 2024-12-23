@@ -93,6 +93,7 @@ const HeroSection = () => {
             width={40}
           />
         </Link>
+
         <Link
           target="_blank"
           href="https://github.com/abdullahalomar"
