@@ -13,7 +13,7 @@ import BlogsPage from "./blogs/page";
 const page = () => {
   return (
     <div>
-      <div className="bg-slate-300"></div>
+      <div className=""></div>
       <HeroSection />
       <Passion />
       <AboutPage />
@@ -25,7 +25,7 @@ const page = () => {
       <MarqueText />
       {/* <Testimonial /> */}
       <ContactPage />
-      {/* <BlogsPage /> */}
+      <BlogsPage />
     </div>
   );
 };

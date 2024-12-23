@@ -19,18 +19,18 @@ const Footer = () => {
       <nav>
         <form>
           <h1 className="text-3xl font-semibold mb-5">Newsletter</h1>
-          {/* <fieldset className="form-control w-full max-w-80">
+          <fieldset className="form-control ">
             <div className="join">
               <input
                 type="text"
                 placeholder="Submit your email"
-                className="input input-primary join-item"
+                className="input input-primary join-item max-w-80"
               />
               <button className="btn btn-primary join-item">
                 <MdEmail color="#83B4FF" fontSize={20} />
               </button>
             </div>
-          </fieldset> */}
+          </fieldset>
         </form>
       </nav>
       <nav>
