@@ -5,6 +5,7 @@ import Image from "next/image";
 import light from "@/assets/icons/light-mode.png";
 import dark from "@/assets/icons/dark-mode.png";
 import { motion } from "framer-motion";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,9 +78,10 @@ const Navbar = () => {
         </div>
         <div className="navbar-end gap-6">
           <div className="">
-            <button>
+            {/* <button>
               <Image src={dark} alt="light mode" width={25} height={25} />
-            </button>
+            </button> */}
+            <ThemeToggle></ThemeToggle>
           </div>
 
           <motion.button
