@@ -14,6 +14,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
+import Sidebar from "@/components/Shared/Sidebar/Sidebar";
 
 const HeroSection = () => {
   const { theme } = useTheme();
@@ -61,8 +62,8 @@ const HeroSection = () => {
 
         <div className="mt-3">
           <TbArrowBigDownLineFilled className="animate-bounce" fontSize={20} />
-          <div className="bg-slate-600 w-[191px] pb-1.5 rounded-md">
-            <button className="px-14 py-3 rounded-md uppercase text-white bg-primary hover:bg-slate-600 mt-0">
+          <div className="bg-secondary shadow-md w-[190px] pb-1.5 rounded-md">
+            <button className="w-[190px] h-12 rounded-md uppercase text-white bg-primary hover:bg-secondary transition duration-300 hover:text-black">
               Say Hello
             </button>
           </div>

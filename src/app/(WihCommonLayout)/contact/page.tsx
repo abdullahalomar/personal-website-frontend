@@ -91,7 +91,7 @@ const ContactPage = () => {
             data-aos-duration="3000"
           ></textarea>
           {/* data-aos="fade-up" data-aos-duration="3000" */}
-          <div className="mt-3">
+          <div className="mt-3" data-aos="fade-up" data-aos-duration="3000">
             <div className="bg-primary  w-full pb-1.5 rounded-md">
               <button className="px-14 py-3 rounded-md uppercase text-white bg-secondary hover:bg-primary transition duration-300 w-full">
                 Send message
