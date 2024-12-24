@@ -1,9 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import navItems from "@/components/navItems";
-import Image from "next/image";
-import light from "@/assets/icons/light-mode.png";
-import dark from "@/assets/icons/dark-mode.png";
+
 import { motion } from "framer-motion";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -35,7 +33,7 @@ const Navbar = () => {
           : "bg-gradient-to-r from-[#83B4FF] via-[#5A72A0] to-[#FDFFE2]"
       }`}
     >
-      <div className="navbar bg-transparent lg:px-24 md:px-24 sm:px-10">
+      <div className="navbar bg-transparent lg:px-24 md:px-24 sm:px-10 px-10">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

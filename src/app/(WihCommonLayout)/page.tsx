@@ -18,7 +18,7 @@ const page = () => {
       <Passion />
       <AboutPage />
       <MarqueText />
-      <ProjectPage />
+      {/* <ProjectPage /> */}
       <Education />
       {/* <Skill /> */}
       <Award />

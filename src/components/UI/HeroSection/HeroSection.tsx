@@ -13,14 +13,22 @@ import { motion } from "framer-motion";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { useTheme } from "next-themes";
 
 const HeroSection = () => {
+  const { theme } = useTheme();
   useEffect(() => {
     Aos.init();
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row justify-between items-center text-center pt-10 sm:pt-10 md:pt-8 lg:pt-0 px-24  bg-gradient-to-r from-[#83B4FF] via-[#5A72A0] to-[#FDFFE2]">
+    <div
+      className={`flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row justify-between items-center pt-10 sm:pt-10 md:pt-8 lg:pt-0 px-32 w-full ${
+        theme === "dark"
+          ? "bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600"
+          : "bg-gradient-to-r from-[#83B4FF] via-[#5A72A0] to-[#aacff3]"
+      }`}
+    >
       <div className="text-start" data-aos="zoom-out-right">
         <h1 className="uppercase text-3xl">
           <span className="text-white">Hello</span> i'm
@@ -86,7 +94,7 @@ const HeroSection = () => {
         >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
-            className="ring-2 p-1 rounded "
+            className="ring-2 ring-primary p-1 rounded "
             src={facebook}
             alt="facebook icon"
             height={40}
@@ -101,7 +109,7 @@ const HeroSection = () => {
         >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
-            className="ring-2 p-1 rounded "
+            className="ring-2 ring-primary p-1 rounded "
             src={github}
             alt="facebook icon"
             height={40}
@@ -115,7 +123,7 @@ const HeroSection = () => {
         >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
-            className="ring-2 p-1 rounded "
+            className="ring-2 ring-primary p-1 rounded "
             src={linkedin}
             alt="facebook icon"
             height={40}
@@ -129,7 +137,7 @@ const HeroSection = () => {
         >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
-            className="ring-2 p-1 rounded "
+            className="ring-2 ring-primary p-1 rounded "
             src={youtube}
             alt="facebook icon"
             height={40}
