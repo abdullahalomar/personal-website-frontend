@@ -37,27 +37,30 @@ const HeroSection = () => {
         <h1 className="text-6xl mt-2 mb-4 font-bold text-primary">
           Abdullah Al Omar
         </h1>
-        <div>
-          <span className="text-2xl text-primary font-semibold me-3">
+        <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center">
+          <p className="text-2xl text-primary font-semibold me-3">
             A Passionate
-          </span>
-          <TypeAnimation
-            preRenderFirstString={true}
-            sequence={[
-              500,
-              "Web Designer",
-              1000,
-              "Frontend Developer",
-              1000,
-              "Video Creator",
-              1000,
-              "App Developer",
-              500,
-            ]}
-            speed={50}
-            style={{ fontSize: "2em", color: "white" }}
-            repeat={Infinity}
-          />
+          </p>
+
+          <div>
+            <TypeAnimation
+              preRenderFirstString={true}
+              sequence={[
+                500,
+                "Web Designer",
+                1000,
+                "Frontend Developer",
+                1000,
+                "Video Creator",
+                1000,
+                "App Developer",
+                500,
+              ]}
+              speed={50}
+              style={{ fontSize: "2em", color: "white" }}
+              repeat={Infinity}
+            />
+          </div>
         </div>
 
         <div className="mt-3">
