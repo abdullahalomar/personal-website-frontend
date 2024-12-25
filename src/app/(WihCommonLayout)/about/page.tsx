@@ -5,15 +5,25 @@ import { FaDownload } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import cv from "@/assets/img/Screenshot 2024-12-25 203334.png";
+import { HiOutlineDownload } from "react-icons/hi";
+import { BiSolidShow } from "react-icons/bi";
 
 const AboutPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     Aos.init();
   }, []);
 
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div>
+      {/* Main Content */}
       <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between items-center lg:gap-28 gap-10 px-6 sm:px-12 lg:px-24 mt-14 pb-0 md:pb-0 lg:pb-6 xl:pb-12">
         <div className="relative" data-aos="zoom-out-right">
           <Image
@@ -28,10 +38,11 @@ const AboutPage = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            className="uppercase absolute -bottom-5 -right-5 lg:-bottom-10 lg:-right-10 bg-secondary py-3 px-6 lg:py-5 lg:px-8 flex gap-3 text-sm lg:text-base hover:bg-primary hover:text-white rounded-md"
+            className="uppercase absolute -bottom-5 -right-5 lg:-bottom-10 lg:-right-10 bg-secondary py-3 px-6 lg:py-5 lg:px-8 flex gap-2 text-sm lg:text-base hover:bg-primary hover:text-white rounded-md"
+            onClick={toggleModal}
           >
-            Download CV
-            <FaDownload fontSize={20} />
+            Show CV
+            <BiSolidShow fontSize={25} />
           </motion.button>
         </div>
         <div className="mt-10 lg:mt-20 sm:mt-20">
@@ -108,6 +119,41 @@ const AboutPage = () => {
           <hr className="my-6 sm:my-8" />
         </div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg p-8 w-full max-w-lg relative">
+            <button
+              className="absolute top-3 right-3 text-xl text-gray-600 hover:text-red-600"
+              onClick={toggleModal}
+            >
+              &times;
+            </button>
+            <h2 className="text-2xl font-bold mb-4">My CV</h2>
+            <Image src={cv} height={800} width={800} alt="cv image" />
+            <p className="text-lg text-secondary py-8">
+              Click on download button to see complete CV and download.
+            </p>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.8 }}
+              className="bg-primary rounded-lg p-2 bottom-5"
+            >
+              <a
+                href="/ABDULLAH_AL_OMAR-CV.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex justify-center items-center gap-2 text-secondary hover:text-white"
+              >
+                Download
+                <HiOutlineDownload fontSize={30} />
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
