@@ -5,22 +5,28 @@ import { HiOutlineDownload } from "react-icons/hi";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import logo from "@/assets/logo/logo.png";
 import { motion } from "framer-motion";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className="fixed top-32 left-0 z-50">
+    <div
+      data-aos="fade-right"
+      data-aos-offset="300"
+      data-aos-easing="ease-in-sine"
+      className="fixed top-32 left-0 z-50"
+    >
       {/* Toggle Button */}
       <button
         onClick={() => setIsCollapsed(!isCollapsed)}
-        className="absolute top-1/2 -right-6 transform -translate-y-1/2 bg-secondary p-2 rounded-full shadow-lg hover:translate-x-3 transition duration-200"
+        className={`absolute top-1/2 
+          ${isCollapsed ? "-right-7" : "-right-6 hover:translate-x-3"} 
+        h-4/5 rounded-br-lg rounded-tr-lg transform -translate-y-1/2 bg-primary p-2 shadow-lg transition duration-200`}
       >
         {isCollapsed ? (
-          <IoIosArrowForward fontSize={20} color="black" />
+          <IoIosArrowForward fontSize={20} color="white" />
         ) : (
-          <IoIosArrowBack fontSize={20} color="black" />
+          <IoIosArrowBack fontSize={20} color="white" />
         )}
       </button>
 
@@ -28,7 +34,7 @@ const Sidebar = () => {
       <div
         className={`transition-all duration-300 ${
           isCollapsed ? "w-0 overflow-hidden" : "w-20"
-        } h-72 rounded-br-lg rounded-tr-lg bg-secondary shadow-md`}
+        } h-72 rounded-br-lg rounded-tr-lg bg-secondary shadow-md relative z-10`}
       >
         {!isCollapsed && (
           <>
