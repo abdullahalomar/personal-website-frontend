@@ -9,6 +9,7 @@ import Award from "@/components/UI/Award/Award";
 import Testimonial from "@/components/UI/Testimonial/Testimonial";
 import ContactPage from "./contact/page";
 import BlogsPage from "./blogs/page";
+import Experience from "@/components/UI/Experience/Experience";
 
 const page = () => {
   return (
@@ -21,6 +22,7 @@ const page = () => {
       {/* <ProjectPage /> */}
       <Education />
       {/* <Skill /> */}
+      <Experience />
       <Award />
       <MarqueText />
       {/* <Testimonial /> */}

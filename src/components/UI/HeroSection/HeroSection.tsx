@@ -98,11 +98,11 @@ const HeroSection = () => {
         >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
-            className="ring-2 ring-primary p-1 rounded "
+            className="ring-2 ring-blue-500 p-0.5 md:p-1 rounded "
             src={facebook}
             alt="facebook icon"
-            height={40}
-            width={40}
+            height={50}
+            width={50}
           />
         </Link>
 
@@ -113,11 +113,11 @@ const HeroSection = () => {
         >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
-            className="ring-2 ring-primary p-1 rounded "
+            className="ring-2 ring-blue-500 p-0.5 md:p-1 rounded "
             src={github}
             alt="facebook icon"
-            height={40}
-            width={40}
+            height={50}
+            width={50}
           />
         </Link>
         <Link
@@ -127,11 +127,11 @@ const HeroSection = () => {
         >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
-            className="ring-2 ring-primary p-1 rounded "
+            className="ring-2 ring-blue-500 p-0.5 md:p-1 rounded "
             src={linkedin}
             alt="facebook icon"
-            height={40}
-            width={40}
+            height={50}
+            width={50}
           />
         </Link>
         <Link
@@ -141,11 +141,11 @@ const HeroSection = () => {
         >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
           <Image
-            className="ring-2 ring-primary p-1 rounded "
+            className="ring-2 ring-blue-500 p-0.5 md:p-1 rounded "
             src={youtube}
             alt="facebook icon"
-            height={40}
-            width={40}
+            height={50}
+            width={50}
           />
         </Link>
       </div>
