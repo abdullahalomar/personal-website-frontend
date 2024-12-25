@@ -22,6 +22,17 @@ const HeroSection = () => {
     Aos.init();
   }, []);
 
+  const handleClick = () => {
+    // Speech Synthesis Setup
+    const message = new SpeechSynthesisUtterance(
+      "Hi, welcome to Abdullah Al Omor's website, stay tuned and learn about Abdullah Al Omor. thank you"
+    );
+    message.lang = "en-US";
+    message.rate = 1;
+    message.pitch = 1;
+    window.speechSynthesis.speak(message);
+  };
+
   return (
     <div
       className={`flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row justify-between items-center pt-10 sm:pt-10 md:pt-8 lg:pt-0 px-32 w-full ${
@@ -66,7 +77,10 @@ const HeroSection = () => {
         <div className="mt-3">
           <TbArrowBigDownLineFilled className="animate-bounce" fontSize={20} />
           <div className="bg-secondary shadow-md w-[190px] pb-1.5 rounded-md">
-            <button className="w-[190px] h-12 rounded-md uppercase text-white bg-primary hover:bg-secondary transition duration-300 hover:text-black">
+            <button
+              className="w-[190px] h-12 rounded-md uppercase text-white bg-primary hover:bg-secondary transition duration-300 hover:text-black"
+              onClick={handleClick}
+            >
               Say Hello
             </button>
           </div>

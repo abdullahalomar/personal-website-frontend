@@ -13,6 +13,11 @@ import "./blog.css";
 // import required modules
 import { FreeMode, Autoplay } from "swiper/modules";
 import Image from "next/image";
+import blog1 from "@/assets/img/Programming-software.jpg";
+import blog2 from "@/assets/img/artificial-intelligence.jpg";
+import blog3 from "@/assets/img/data-analytics.jpg";
+import blog4 from "@/assets/img/information-technology.jpg";
+import blog5 from "@/assets/img/web-design.jpg";
 
 const BlogsPage = () => {
   return (
@@ -54,11 +59,11 @@ const BlogsPage = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <div className="card bg-base-100 max-w-96 shadow-xl">
+            <div className="card bg-base-100 max-w-96 h-80 shadow-xl">
               <figure>
                 <Image
-                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700"
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700 h-[538px]"
+                  src={blog1}
                   alt="Blog Image"
                   width={600}
                   height={600}
@@ -70,20 +75,20 @@ const BlogsPage = () => {
                   href=""
                   className="card-title hover:text-secondary duration-500"
                 >
-                  Kobita tumi sopno charini hoye khobor nio na
+                  Programming Software
                 </a>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="card bg-base-100 max-w-96 shadow-xl">
+            <div className="card bg-base-100 max-w-96 h-80 shadow-xl">
               <figure>
                 <Image
                   className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700"
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                  src={blog2}
                   alt="Blog Image"
                   width={600}
-                  height={600}
+                  height={300}
                 />
               </figure>
               <div className="card-body">
@@ -92,17 +97,17 @@ const BlogsPage = () => {
                   href=""
                   className="card-title hover:text-secondary duration-500"
                 >
-                  Kobita tumi sopno charini hoye khobor nio na
+                  Artificial-Intelligence
                 </a>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="card bg-base-100 max-w-96 shadow-xl">
+            <div className="card bg-base-100 max-w-96 h-80 shadow-xl">
               <figure>
                 <Image
-                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700"
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700 "
+                  src={blog3}
                   alt="Blog Image"
                   width={600}
                   height={600}
@@ -114,17 +119,17 @@ const BlogsPage = () => {
                   href=""
                   className="card-title hover:text-secondary duration-500"
                 >
-                  Kobita tumi sopno charini hoye khobor nio na
+                  Data-Analytics
                 </a>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="card bg-base-100 max-w-96 shadow-xl">
+            <div className="card bg-base-100 max-w-96 h-80 shadow-xl">
               <figure>
                 <Image
-                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700"
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700 "
+                  src={blog4}
                   alt="Blog Image"
                   width={600}
                   height={600}
@@ -136,17 +141,17 @@ const BlogsPage = () => {
                   href=""
                   className="card-title hover:text-secondary duration-500"
                 >
-                  Kobita tumi sopno charini hoye khobor nio na
+                  Information-Technology
                 </a>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="card bg-base-100 max-w-96 shadow-xl">
+            <div className="card bg-base-100 max-w-96 h-80 shadow-xl">
               <figure>
                 <Image
-                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700"
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700 "
+                  src={blog5}
                   alt="Blog Image"
                   width={600}
                   height={600}
@@ -158,29 +163,7 @@ const BlogsPage = () => {
                   href=""
                   className="card-title hover:text-secondary duration-500"
                 >
-                  Kobita tumi sopno charini hoye khobor nio na
-                </a>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="card bg-base-100 max-w-96 shadow-xl">
-              <figure>
-                <Image
-                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700"
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                  alt="Blog Image"
-                  width={600}
-                  height={600}
-                />
-              </figure>
-              <div className="card-body">
-                <div className="badge badge-secondary">NEW</div>
-                <a
-                  href=""
-                  className="card-title hover:text-secondary duration-500"
-                >
-                  Kobita tumi sopno charini hoye khobor nio na
+                  Web-Design
                 </a>
               </div>
             </div>
