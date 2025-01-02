@@ -22,10 +22,10 @@ const AboutPage = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  const aboutText =
-    "As a passionate Computer Science and Engineering student, I specialize in creating efficient, reliable, and innovative solutions that meet real-world needs. With a focus on web development and technology, I combine smart work, dedication, and collaboration to craft systems that drive results. Whether it’s building user-friendly applications or solving complex problems, my goal is to leverage technology to make a positive impact. Let’s bring ideas to life together!";
+  // const aboutText =
+  //   "As a passionate Computer Science and Engineering student, I specialize in creating efficient, reliable, and innovative solutions that meet real-world needs. With a focus on web development and technology, I combine smart work, dedication, and collaboration to craft systems that drive results. Whether it’s building user-friendly applications or solving complex problems, my goal is to leverage technology to make a positive impact. Let’s bring ideas to life together!";
 
-  const truncatedText = aboutText.substring(0, 240);
+  // const truncatedText = aboutText.substring(0, 240);
 
   return (
     <div>
@@ -58,8 +58,9 @@ const AboutPage = () => {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl my-5">
             I Develop Systems that Work
           </h1>
-          <p className="text-lg sm:text-xl  w-[400px] md:w-[800px]">
-            {truncatedText}...{" "}
+          <p className="text-lg sm:text-xl">
+            As a passionate Computer Science and Engineering student, I
+            specialize in creating efficient, reliable, and innovative solutions
             <Link
               className="bg-primary py-0 px-3 text-white rounded-lg text-sm"
               href="/about-details"

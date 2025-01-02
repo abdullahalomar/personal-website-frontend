@@ -17,10 +17,12 @@ const Education = () => {
         <div className="mb-8">
           <p className="text-2xl text-secondary uppercase mb-2">Education</p>
           <h1 className="text-5xl font-semibold">My Education</h1>
-          <p className="text-md py-8 w-[380px] md:w-[700px]">
+          <p className="text-md py-8">
             Pursuing a degree in Computer Science and Engineering, honing skills
+            in programming.nd Engineering, honing skills
+            {/* Pursuing a degree in Computer Science and Engineering, honing skills
             in programming, software development, and cutting-edge technologies.
-            Passionate about learning and growing in the tech industry.
+            Passionate about learning and growing in the tech industry. */}
           </p>
         </div>
 
@@ -95,7 +97,7 @@ const Education = () => {
         data-aos-duration="1500"
       > */}
       <Image
-        className="rounded-xl max-h-[730px]"
+        className="rounded-xl max-h-[730px] max-w-[400px]"
         src={education}
         height={730}
         width={635}
