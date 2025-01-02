@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html data-theme="mytheme" lang="en">
-      <body className="">
+      <body className="w-full">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

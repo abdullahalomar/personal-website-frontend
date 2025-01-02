@@ -15,10 +15,10 @@ const page = () => {
   return (
     <div>
       <div className=""></div>
-      <HeroSection />
+      {/* <HeroSection />
       <Passion />
       <AboutPage />
-      <MarqueText />
+      <MarqueText /> */}
       {/* <ProjectPage /> */}
       <Education />
       {/* <Skill /> */}

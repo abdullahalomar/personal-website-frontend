@@ -87,19 +87,19 @@ const Education = () => {
           </div>
         </div>
       </div>
-      <div
+      {/* <div
         data-aos="fade-left"
         data-aos-easing="linear"
         data-aos-duration="1500"
-      >
-        <Image
-          className="rounded-xl max-h-[730px]"
-          src={education}
-          height={730}
-          width={635}
-          alt="education"
-        />
-      </div>
+      > */}
+      <Image
+        className="rounded-xl max-h-[730px]"
+        src={education}
+        height={730}
+        width={635}
+        alt="education"
+      />
+      {/* </div> */}
     </div>
   );
 };
