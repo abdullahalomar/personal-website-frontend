@@ -1,7 +1,7 @@
 "use client";
+
 import profile from "@/assets/img/profile-image-web.png";
 import Image from "next/image";
-import { FaDownload } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import cv from "@/assets/img/Screenshot 2024-12-25 203334.png";
 import { HiOutlineDownload } from "react-icons/hi";
 import { BiSolidShow } from "react-icons/bi";
+import Link from "next/link";
 
 const AboutPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,6 +21,11 @@ const AboutPage = () => {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  const aboutText =
+    "As a passionate Computer Science and Engineering student, I specialize in creating efficient, reliable, and innovative solutions that meet real-world needs. With a focus on web development and technology, I combine smart work, dedication, and collaboration to craft systems that drive results. Whether it’s building user-friendly applications or solving complex problems, my goal is to leverage technology to make a positive impact. Let’s bring ideas to life together!";
+
+  const truncatedText = aboutText.substring(0, 240);
 
   return (
     <div>
@@ -52,10 +58,14 @@ const AboutPage = () => {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl my-5">
             I Develop Systems that Work
           </h1>
-          <p className="text-lg sm:text-xl">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-            officia temporibus inventore eligendi, quidem repudiandae quam dolor
-            obcaecati ab fugiat!
+          <p className="text-lg sm:text-xl  w-[400px] md:w-[800px]">
+            {truncatedText}...{" "}
+            <Link
+              className="bg-primary py-0 px-3 text-white rounded-lg text-sm"
+              href="/about-details"
+            >
+              See more
+            </Link>
           </p>
           <hr className="my-6 sm:my-8" />
           <div className="flex flex-col sm:flex-row sm:gap-10">

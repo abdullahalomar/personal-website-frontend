@@ -2,10 +2,6 @@
 "use client";
 import Image from "next/image";
 import heroImage from "@/assets/img/hero-img.png";
-import facebook from "@/assets/icons/facebook.png";
-import github from "@/assets/icons/github.png";
-import linkedin from "@/assets/icons/linkedin.png";
-import youtube from "@/assets/icons/youtube.png";
 import { TypeAnimation } from "react-type-animation";
 import { TbArrowBigDownLineFilled } from "react-icons/tb";
 import Link from "next/link";
@@ -14,7 +10,10 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
-import Sidebar from "@/components/Shared/Sidebar/Sidebar";
+import { FaFacebookF } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FaYoutube } from "react-icons/fa6";
 
 const HeroSection = () => {
   const { theme } = useTheme();
@@ -68,7 +67,7 @@ const HeroSection = () => {
                 500,
               ]}
               speed={50}
-              style={{ fontSize: "1em", color: "white" }}
+              style={{ fontSize: "24px", color: "white" }}
               repeat={Infinity}
             />
           </div>
@@ -76,9 +75,9 @@ const HeroSection = () => {
 
         <div className="mt-3">
           <TbArrowBigDownLineFilled className="animate-bounce" fontSize={20} />
-          <div className="bg-secondary shadow-md w-[190px] pb-1.5 rounded-md">
+          <div className="bg-secondary shadow-md w-[120px] md:w-[190px] pb-1.5 rounded-md">
             <button
-              className="w-[190px] h-12 rounded-md uppercase text-white bg-primary hover:bg-secondary transition duration-300 hover:text-black"
+              className="w-[120px] md:w-[190px] h-9 md:h-12 rounded-md uppercase text-white bg-primary hover:bg-secondary transition duration-300 hover:text-black"
               onClick={handleClick}
             >
               Say Hello
@@ -111,13 +110,8 @@ const HeroSection = () => {
           className="animate-bounce"
         >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
-          <Image
-            className="ring-2 ring-blue-500 p-0.5 md:p-1 rounded "
-            src={facebook}
-            alt="facebook icon"
-            height={50}
-            width={50}
-          />
+
+          <FaFacebookF fontSize={35} />
         </Link>
 
         <Link
@@ -126,13 +120,8 @@ const HeroSection = () => {
           className="animate-bounce"
         >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
-          <Image
-            className="ring-2 ring-blue-500 p-0.5 md:p-1 rounded "
-            src={github}
-            alt="facebook icon"
-            height={50}
-            width={50}
-          />
+
+          <FaGithub fontSize={35} />
         </Link>
         <Link
           target="_blank"
@@ -140,13 +129,8 @@ const HeroSection = () => {
           className="animate-bounce"
         >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
-          <Image
-            className="ring-2 ring-blue-500 p-0.5 md:p-1 rounded "
-            src={linkedin}
-            alt="facebook icon"
-            height={50}
-            width={50}
-          />
+
+          <FaLinkedinIn fontSize={35} />
         </Link>
         <Link
           target="_blank"
@@ -154,13 +138,8 @@ const HeroSection = () => {
           className=" animate-bounce"
         >
           <span className="animate-ping absolute inline-flex h-full w-full bg-sky-400 opacity-75"></span>
-          <Image
-            className="ring-2 ring-blue-500 p-0.5 md:p-1 rounded "
-            src={youtube}
-            alt="facebook icon"
-            height={50}
-            width={50}
-          />
+
+          <FaYoutube className="" fontSize={35} />
         </Link>
       </div>
     </div>

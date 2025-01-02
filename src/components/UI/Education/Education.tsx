@@ -10,15 +10,17 @@ const Education = () => {
   useEffect(() => {
     Aos.init();
   }, []);
+
   return (
     <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row gap-10 px-8 md:px-16 lg:px-24 mt-28">
       <div>
         <div className="mb-8">
           <p className="text-2xl text-secondary uppercase mb-2">Education</p>
           <h1 className="text-5xl font-semibold">My Education</h1>
-          <p className="text-md py-8">
-            Sed ut perspiciatis unde omnis iste natus kobita tumi sopno charini
-            hoye khbor nio na sit voluptatem accusantium dolore.
+          <p className="text-md py-8 w-[380px] md:w-[700px]">
+            Pursuing a degree in Computer Science and Engineering, honing skills
+            in programming, software development, and cutting-edge technologies.
+            Passionate about learning and growing in the tech industry.
           </p>
         </div>
 

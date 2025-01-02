@@ -22,8 +22,8 @@ const Passion = () => {
               />
               <h2 className="card-title text-2xl my-3">Dedication</h2>
               <p className="text-xl text-gray-500">
-                Seaque ipsa quae ab illo inven tore veritatis et qua si
-                architecto beatae atis et sopno vitae.
+                Committed to continuous learning and excellence, I bring
+                unwavering focus and determination to every project I undertake.
               </p>
             </div>
           </div>
@@ -38,8 +38,8 @@ const Passion = () => {
               />
               <h2 className="card-title text-2xl my-3">Smart Work</h2>
               <p className="text-xl text-gray-500">
-                Seaque ipsa quae ab illo inven tore veritatis et qua si
-                architecto beatae atis et sopno vitae.
+                I believe in working efficiently by leveraging innovative
+                strategies and tools to deliver high-quality results.
               </p>
             </div>
           </div>
@@ -54,8 +54,8 @@ const Passion = () => {
               />
               <h2 className="card-title text-2xl my-3">Collaboration</h2>
               <p className="text-xl text-gray-500">
-                Seaque ipsa quae ab illo inven tore veritatis et qua si
-                architecto beatae atis et sopno vitae.
+                A team player at heart, I thrive on building strong connections
+                and working together to achieve shared goals.
               </p>
             </div>
           </div>
@@ -70,8 +70,9 @@ const Passion = () => {
               />
               <h2 className="card-title text-2xl my-3">Technology</h2>
               <p className="text-xl text-gray-500">
-                Seaque ipsa quae ab illo inven tore veritatis et qua si
-                architecto beatae atis et sopno vitae.
+                Passionate about exploring and utilizing cutting-edge
+                technologies to create impactful solutions for real-world
+                challenges.
               </p>
             </div>
           </div>

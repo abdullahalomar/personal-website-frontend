@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center md:footer lg:footer xl:footer py-20 md:p-28 lg:p-28 xl:p-28">
+    <footer className="footer footer-center bg-white md:footer lg:footer xl:footer py-20 md:p-28 lg:p-28 xl:p-28">
       <nav>
         <div>
           <h1 className="text-3xl font-semibold">Abdullah Al Omar</h1>
