@@ -21,7 +21,7 @@ const page = () => {
       <MarqueText />
       {/* <ProjectPage /> */}
       <Education />
-      {/* <Skill /> */}
+      <Skill />
       <Experience />
       <Award />
       <MarqueText />
