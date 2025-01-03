@@ -21,7 +21,7 @@ const Sidebar = () => {
         onClick={() => setIsCollapsed(!isCollapsed)}
         className={`absolute top-1/2 
           ${isCollapsed ? "-right-7" : "-right-6 hover:translate-x-3"} 
-        h-4/5 rounded-br-lg rounded-tr-lg transform -translate-y-1/2 bg-primary p-2 shadow-lg transition duration-200`}
+        h-64 rounded-br-lg rounded-tr-lg transform -translate-y-1/2 bg-primary p-2 shadow-lg transition duration-200`}
       >
         {isCollapsed ? (
           <IoIosArrowForward fontSize={20} color="white" />
@@ -34,7 +34,7 @@ const Sidebar = () => {
       <div
         className={`transition-all duration-300 ${
           isCollapsed ? "w-0 overflow-hidden" : "w-20"
-        } h-72 rounded-br-lg rounded-tr-lg bg-secondary shadow-md relative z-10`}
+        } h-72 bg-secondary shadow-md relative z-10 `}
       >
         {!isCollapsed && (
           <>

@@ -9,11 +9,16 @@ import { motion } from "framer-motion";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-
+import gridImage from "@/assets/logo/grid.svg";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa6";
+import img1 from "@/assets/icons/content.png";
+import img2 from "@/assets/icons/montage.png";
+import img3 from "@/assets/icons/programming.png";
+import img4 from "@/assets/icons/video-editing-app.png";
+import img5 from "@/assets/icons/pages.png";
 
 const HeroSection = () => {
   useEffect(() => {
@@ -78,8 +83,9 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
       <motion.div
-        className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row items-center gap-0 sm:gap-0 md:gap-10 lg:gap-10"
+        className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row items-center gap-0 sm:gap-0 md:gap-10 lg:gap-10 relative"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -95,6 +101,48 @@ const HeroSection = () => {
           height={450}
           width={450}
         />
+
+        {/* Floating Images */}
+        <motion.div
+          initial={{ x: -10 }}
+          animate={{ x: 10 }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+          className="absolute left-10 hidden md:block"
+        >
+          <Image src={img1} alt="img1" width={30} height={30} />
+        </motion.div>
+        <motion.div
+          initial={{ y: -10 }}
+          animate={{ y: 10 }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+          className="absolute top-20 left-10 hidden md:block"
+        >
+          <Image src={img2} alt="img2" width={30} height={30} />
+        </motion.div>
+        <motion.div
+          initial={{ x: 10 }}
+          animate={{ x: -10 }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+          className="absolute top-12 right-20 hidden md:block"
+        >
+          <Image src={img3} alt="img3" width={30} height={30} />
+        </motion.div>
+        <motion.div
+          initial={{ y: 10 }}
+          animate={{ y: -10 }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+          className="absolute top-40 right-16 hidden md:block"
+        >
+          <Image src={img4} alt="img4" width={30} height={30} />
+        </motion.div>
+        <motion.div
+          initial={{ x: -10 }}
+          animate={{ x: 10 }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+          className="absolute top-1/2 right-14 hidden md:block"
+        >
+          <Image src={img5} alt="img5" width={30} height={30} />
+        </motion.div>
       </motion.div>
       <div className="flex sm:flex md:flex-col lg:flex-col gap-8">
         <Link
