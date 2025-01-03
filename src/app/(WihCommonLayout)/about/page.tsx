@@ -22,16 +22,14 @@ const AboutPage = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  // const aboutText =
-  //   "As a passionate Computer Science and Engineering student, I specialize in creating efficient, reliable, and innovative solutions that meet real-world needs. With a focus on web development and technology, I combine smart work, dedication, and collaboration to craft systems that drive results. Whether it’s building user-friendly applications or solving complex problems, my goal is to leverage technology to make a positive impact. Let’s bring ideas to life together!";
-
-  // const truncatedText = aboutText.substring(0, 240);
+  const aboutText =
+    "As a passionate Computer Science and Engineering student, I specialize in creating efficient, reliable, and innovative solutions that meet real-world needs. With a focus on web development and technology, I combine smart work, dedication, and collaboration to craft systems that drive results. Whether it’s building user-friendly applications or solving complex problems, my goal is to leverage technology to make a positive impact. Let’s bring ideas to life together!";
 
   return (
     <div>
       {/* Main Content */}
-      <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between items-center lg:gap-28 gap-10 px-6 sm:px-12 lg:px-24 mt-14 pb-0 md:pb-0 lg:pb-6 xl:pb-12">
-        <div className="relative" data-aos="zoom-out-right">
+      <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row justify-between items-center lg:gap-28 gap-10 px-6 sm:px-12 lg:px-24 mt-14 pb-0 md:pb-0 lg:pb-6 xl:pb-12">
+        <div className="relative lg:w-2/5" data-aos="zoom-out-right">
           <Image
             className="hover:-translate-y-6 transition duration-700"
             src={profile}
@@ -51,7 +49,7 @@ const AboutPage = () => {
             <BiSolidShow fontSize={25} />
           </motion.button>
         </div>
-        <div className="mt-10 lg:mt-20 sm:mt-20">
+        <div className="mt-10 lg:mt-20 sm:mt-20 max-w-3xl lg:w-3/5">
           <p className="uppercase text-lg sm:text-xl text-secondary">
             About me
           </p>
@@ -59,8 +57,8 @@ const AboutPage = () => {
             I Develop Systems that Work
           </h1>
           <p className="text-lg sm:text-xl">
-            As a passionate Computer Science and Engineering student, I
-            specialize in creating efficient, reliable, and innovative solutions
+            {`${aboutText.substring(0, 240)}`}
+            {aboutText.length > 10 && "..."}
             <Link
               className="bg-primary py-0 px-3 text-white rounded-lg text-sm"
               href="/about-details"

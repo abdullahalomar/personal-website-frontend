@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import navItems from "@/components/navItems";
 
 import { motion } from "framer-motion";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,7 +78,6 @@ const Navbar = () => {
             {/* <button>
               <Image src={dark} alt="light mode" width={25} height={25} />
             </button> */}
-            <ThemeToggle></ThemeToggle>
           </div>
 
           <motion.button

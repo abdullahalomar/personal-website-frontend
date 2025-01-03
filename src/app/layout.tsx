@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   title: "Abdullah Al Omar",
@@ -14,9 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html data-theme="mytheme" lang="en">
-      <body className="w-full">
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      <body className="w-full">{children}</body>
     </html>
   );
 }

@@ -9,14 +9,13 @@ import { motion } from "framer-motion";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { useTheme } from "next-themes";
+
 import { FaFacebookF } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa6";
 
 const HeroSection = () => {
-  const { theme } = useTheme();
   useEffect(() => {
     Aos.init();
   }, []);
@@ -33,13 +32,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div
-      className={`flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row justify-between items-center pt-10 sm:pt-10 md:pt-8 lg:pt-0 px-32 w-full ${
-        theme === "dark"
-          ? "bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600"
-          : "bg-gradient-to-r from-[#83B4FF] via-[#5A72A0] to-[#aacff3]"
-      }`}
-    >
+    <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row justify-between items-center pt-10 sm:pt-10 md:pt-8 lg:pt-0 px-32 w-full bg-gradient-to-r from-[#83B4FF] via-[#5A72A0] to-[#aacff3]">
       <div className="text-start" data-aos="zoom-out-right">
         <h1 className="uppercase text-3xl">
           <span className="text-white">Hello</span> i'm

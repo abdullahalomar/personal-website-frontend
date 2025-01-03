@@ -4,10 +4,8 @@ import dedication from "@/assets/icons/dedication.png";
 import smart from "@/assets/icons/smart-work.png";
 import collaboration from "@/assets/icons/Collaboration.png";
 import technology from "@/assets/icons/technology.png";
-import { useTheme } from "next-themes";
 
 const Passion = () => {
-  const { theme } = useTheme();
   return (
     <>
       <div className="py-16 w-full px-8 md:px-16 lg:px-24 bg-[#E2ECF6] ">
@@ -21,7 +19,7 @@ const Passion = () => {
                 alt="dedication icon"
               />
               <h2 className="card-title text-2xl my-3">Dedication</h2>
-              <p className="text-xl text-gray-500">
+              <p className="text-xl text-start text-gray-500">
                 Committed to continuous learning and excellence, I bring
                 unwavering focus and determination to every project I undertake.
               </p>
@@ -37,7 +35,7 @@ const Passion = () => {
                 alt="smart work icon"
               />
               <h2 className="card-title text-2xl my-3">Smart Work</h2>
-              <p className="text-xl text-gray-500">
+              <p className="text-xl text-start text-gray-500">
                 I believe in working efficiently by leveraging innovative
                 strategies and tools to deliver high-quality results.
               </p>
@@ -53,7 +51,7 @@ const Passion = () => {
                 alt="collaboration icon"
               />
               <h2 className="card-title text-2xl my-3">Collaboration</h2>
-              <p className="text-xl text-gray-500">
+              <p className="text-xl text-start text-gray-500">
                 A team player at heart, I thrive on building strong connections
                 and working together to achieve shared goals.
               </p>
@@ -69,7 +67,7 @@ const Passion = () => {
                 alt="technology icon"
               />
               <h2 className="card-title text-2xl my-3">Technology</h2>
-              <p className="text-xl text-gray-500">
+              <p className="text-xl text-start text-gray-500">
                 Passionate about exploring and utilizing cutting-edge
                 technologies to create impactful solutions for real-world
                 challenges.

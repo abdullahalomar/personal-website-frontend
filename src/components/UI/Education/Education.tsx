@@ -96,6 +96,7 @@ const Education = () => {
       > */}
       <Image
         className="rounded-xl max-h-[730px]"
+        data-aos="zoom-in-down"
         src={education}
         height={730}
         width={635}
