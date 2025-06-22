@@ -44,28 +44,28 @@ const Footer = () => {
       <nav>
         <h1 className="text-3xl font-semibold">Follow Me</h1>
         <div className="grid grid-flow-col gap-4">
-          <Link href="#">
+          <Link href="https://www.facebook.com/Abdullahalomar2000">
             <FaFacebookSquare
               className="hover:origin-center hover:rotate-45 duration-500"
               fontSize={38}
               color="#1877F2"
             />{" "}
           </Link>
-          <Link href="#">
+          <Link href="https://x.com/m_omar40">
             <FaSquareTwitter
               className="hover:origin-center hover:rotate-45 duration-500"
               fontSize={38}
               color="#1DA1F2"
             />{" "}
           </Link>
-          <Link href="#">
+          <Link href="www.linkedin.com/in/omar17">
             <FaLinkedin
               className="hover:origin-center hover:rotate-45 duration-500"
               fontSize={38}
               color="#0077B5"
             />{" "}
           </Link>
-          <Link href="#">
+          <Link href="https://www.instagram.com/abdullahomar.bd/">
             <FaInstagramSquare
               className="hover:origin-center hover:rotate-45 duration-500"
               fontSize={38}
