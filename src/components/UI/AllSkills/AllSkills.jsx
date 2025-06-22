@@ -16,24 +16,24 @@ const AllSkills = () => {
 
   const skillData = {
     Testing: [
-      { name: "Manual Testing", icon: "/skills/icons8-html-100.png" },
-      { name: "Automation Testing", icon: "/skills/icons8-nodejs-100.png" },
-      { name: "API Testing", icon: "/skills/icons8-redux-100.png" },
-      { name: "Test Planning", icon: "/skills/icons8-tailwind-css-100.png" },
-      { name: "Bug Reporting", icon: "/skills/icons8-css-100.png" },
+      { name: "Manual Testing", icon: "/skills/manual-testing.png" },
+      { name: "Automation Testing", icon: "/skills/automation-100.png" },
+      { name: "API Testing", icon: "/skills/rest-api-100.png" },
+      { name: "Test Planning", icon: "/skills/test-planning-100.png" },
+      { name: "Bug Reporting", icon: "/skills/bug-100.png" },
     ],
     Tools: [
       { name: "Postman", icon: "/skills/postman.png" },
-      { name: "JMeter", icon: "/skills/icons8-adobe-premiere-pro-100.png" },
-      { name: "Selenium", icon: "/skills/icons8-adobe-animate-100.png" },
-      { name: "Git & GitHub", icon: "/skills/icons8-tailwind-css-100.png" },
+      { name: "JMeter", icon: "/skills/jMeter.png" },
+      { name: "Selenium", icon: "/skills/icons8-selenium-100.png" },
+      { name: "Git & GitHub", icon: "/skills/github-100.png" },
     ],
     Programming: [
       { name: "JavaScript", icon: "/skills/icons8-javascript-100.png" },
+      { name: "Java", icon: "/skills/java-100.png" },
       { name: "HTML", icon: "/skills/icons8-html-100.png" },
       { name: "CSS", icon: "/skills/icons8-css-100.png" },
       { name: "Node.js", icon: "/skills/icons8-nodejs-100.png" },
-      { name: "Redux", icon: "/skills/icons8-redux-100.png" },
     ],
   };
 
