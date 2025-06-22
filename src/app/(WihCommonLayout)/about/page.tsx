@@ -10,6 +10,20 @@ import cv from "@/assets/img/Screenshot 2024-12-25 203334.png";
 import { HiOutlineDownload } from "react-icons/hi";
 import { BiSolidShow } from "react-icons/bi";
 import Link from "next/link";
+import CountUp from "react-countup";
+
+const calculateAge = (birthDate: string | number | Date) => {
+  const today = new Date();
+  const birth = new Date(birthDate);
+  let age = today.getFullYear() - birth.getFullYear();
+  const monthDiff = today.getMonth() - birth.getMonth();
+  const dayDiff = today.getDate() - birth.getDate();
+
+  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+    age--;
+  }
+  return age;
+};
 
 const AboutPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,8 +36,24 @@ const AboutPage = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+  // age calculate
+  // const calculateAge = (birthDate: string | number | Date) => {
+  //   const today = new Date();
+  //   const birth = new Date(birthDate);
+  //   let age = today.getFullYear() - birth.getFullYear();
+  //   const monthDiff = today.getMonth() - birth.getMonth();
+  //   const dayDiff = today.getDate() - birth.getDate();
+
+  //   if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+  //     age--; // hasn't had birthday yet this year
+  //   }
+  //   return age;
+  // };
+
+  const age = calculateAge("2000-02-17");
+
   const aboutText =
-    "As a passionate Computer Science and Engineering student, I specialize in creating efficient, reliable, and innovative solutions that meet real-world needs. With a focus on web development and technology, I combine smart work, dedication, and collaboration to craft systems that drive results. Whether it’s building user-friendly applications or solving complex problems, my goal is to leverage technology to make a positive impact. Let’s bring ideas to life together!";
+    "As a dedicated Software Quality Assurance Engineer, I specialize in ensuring that software products are efficient, reliable, and meet the highest standards. With a strong focus on testing methodologies, automation, and continuous improvement, I work to identify and resolve issues before they impact users. Combining attention to detail, collaboration, and a passion for quality, my goal is to deliver seamless and robust software solutions. Let’s ensure excellence together!";
 
   return (
     <div>
@@ -54,7 +84,7 @@ const AboutPage = () => {
             About me
           </p>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl my-5">
-            I Develop Systems that Work
+            Ensuring Excellence
           </h1>
           <p className="text-lg sm:text-xl">
             {`${aboutText.substring(0, 240)}`}
@@ -83,7 +113,12 @@ const AboutPage = () => {
                     <p className="text-lg font-bold">Age</p>
                   </div>
                   <div className="table-cell">
-                    <p className="text-lg">24 Years</p>
+                    <p className="text-lg">
+                      <span className="">
+                        <CountUp end={age} duration={2} />
+                      </span>{" "}
+                      Years
+                    </p>
                   </div>
                 </div>
                 <div className="table-row">
@@ -91,7 +126,7 @@ const AboutPage = () => {
                     <p className="text-lg font-bold">Occupation</p>
                   </div>
                   <div className="table-cell">
-                    <p className="text-lg">Programmer, Content Creator</p>
+                    <p className="text-lg">Software QA Engineer</p>
                   </div>
                 </div>
               </div>
@@ -103,7 +138,7 @@ const AboutPage = () => {
                     <p className="font-bold text-lg">Phone</p>
                   </div>
                   <div className="table-cell">
-                    <p className="text-lg">+88 1234567890</p>
+                    <p className="text-lg">+88 01704951688</p>
                   </div>
                 </div>
                 <div className="table-row">

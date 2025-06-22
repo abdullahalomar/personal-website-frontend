@@ -11,6 +11,7 @@ import ContactPage from "./contact/page";
 import BlogsPage from "./blogs/page";
 import Experience from "@/components/UI/Experience/Experience";
 import Skill from "@/components/UI/Skill/Skill";
+import SkillSet from "@/components/UI/SkillSet/SkillSet";
 
 const page = () => {
   return (
@@ -22,7 +23,8 @@ const page = () => {
       <MarqueText />
       {/* <ProjectPage /> */}
       <Education />
-      <Skill />
+      {/* <Skill /> */}
+      <SkillSet />
       <Experience />
       <Award />
       <MarqueText />

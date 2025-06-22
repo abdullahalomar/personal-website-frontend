@@ -26,14 +26,43 @@ const HeroSection = () => {
   }, []);
 
   const handleClick = () => {
-    // Speech Synthesis Setup
-    const message = new SpeechSynthesisUtterance(
-      "Hi, welcome to Abdullah Al Omor's website, stay tuned and learn about Abdullah Al Omor. thank you"
-    );
-    message.lang = "en-US";
-    message.rate = 1;
-    message.pitch = 1;
-    window.speechSynthesis.speak(message);
+    const speakMessage = () => {
+      const message = new SpeechSynthesisUtterance(
+        "Hello and welcome! I'm so glad you're here. This is Abdullah's personal website. Feel free to explore his work, learn more about him, and of course — don’t hesitate to say hello. Enjoy your visit!"
+      );
+      message.lang = "en-US";
+      message.rate = 1;
+      message.pitch = 1;
+
+      const voices = window.speechSynthesis.getVoices();
+
+      // Try to pick a known male voice
+      const preferredMaleVoices = [
+        "Google UK English Male", // Chrome
+        "Microsoft David - English (United States)", // Windows
+        "Alex", // macOS
+        "Daniel", // macOS
+      ];
+
+      const maleVoice = voices.find((voice) =>
+        preferredMaleVoices.includes(voice.name)
+      );
+
+      if (maleVoice) {
+        message.voice = maleVoice;
+      } else {
+        console.warn("Preferred male voice not found. Using default voice.");
+      }
+
+      window.speechSynthesis.speak(message);
+    };
+
+    // Wait for voices to load if not loaded already
+    if (speechSynthesis.getVoices().length === 0) {
+      speechSynthesis.onvoiceschanged = speakMessage;
+    } else {
+      speakMessage();
+    }
   };
 
   return (
@@ -55,13 +84,13 @@ const HeroSection = () => {
               preRenderFirstString={true}
               sequence={[
                 500,
-                "Web Designer",
+                "QA Engineer",
                 1000,
-                "Frontend Developer",
+                "Software QA",
+                1000,
+                "Quality Assurance",
                 1000,
                 "Video Creator",
-                1000,
-                "App Developer",
                 500,
               ]}
               speed={50}

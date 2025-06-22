@@ -26,7 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/UI/Skill/Skill.jsx"
+    "src/components/UI/Skill/Skill.jsx",
+    "src/components/UI/SkillSet/SkillSet.tsx"
   ],
   "exclude": ["node_modules"]
 }

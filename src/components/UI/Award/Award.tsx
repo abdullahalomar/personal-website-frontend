@@ -42,13 +42,15 @@ const Award = () => {
 
           <div className="divider"></div>
 
-          <div className="rounded-box grid" data-aos="flip-up">
+          {/* <div className="rounded-box grid" data-aos="flip-up">
             <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row justify-between items-baseline">
               <div>
                 <Image src={coursera} height={100} width={100} alt="" />
               </div>
               <div>
-                <p className="text-2xl font-bold">Developer of the Year</p>
+                <p className="text-2xl font-bold">
+                  Coursera how to create a jira project
+                </p>
                 <p className="text-gray-400 text-xl">2021</p>
               </div>
               <div>
@@ -62,11 +64,11 @@ const Award = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className="divider"></div>
+          {/* <div className="divider"></div> */}
 
-          <div className="card rounded-box grid h-20" data-aos="flip-up">
+          {/* <div className="card rounded-box grid h-20" data-aos="flip-up">
             <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row justify-between items-baseline">
               <div>
                 <Image src={coursera} height={100} width={100} alt="" />
@@ -86,7 +88,7 @@ const Award = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
