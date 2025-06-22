@@ -1,27 +1,27 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import navItems from "@/components/navItems";
-
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) {
-        // একেবারে টপে থাকলে ব্যাকগ্রাউন্ড ট্রান্সপারেন্ট হবে
-        setIsScrolled(false);
-      } else {
-        // স্ক্রল করলে ব্যাকগ্রাউন্ড প্রাইমারি কালারে পরিবর্তন হবে
-        setIsScrolled(true);
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 0);
+
+      const sections = navItems.map((item) => document.getElementById(item.id));
+      for (const section of sections) {
+        if (section && scrollY >= section.offsetTop - 100) {
+          setActiveSection(section.id);
+        }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -29,7 +29,7 @@ const Navbar = () => {
       className={`sticky top-0 z-50 transition-colors duration-1000 ${
         isScrolled
           ? "bg-primary"
-          : "bg-gradient-to-r from-[#83B4FF] via-[#5A72A0] to-[#FDFFE2]"
+          : "bg-gradient-to-r from-[#99b9e5] via-[#5A72A0] to-[#83B4FF]"
       }`}
     >
       <div className="navbar bg-transparent lg:px-24 md:px-24 sm:px-10 px-10">
@@ -53,37 +53,51 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow text-white"
+              className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow text-white bg-base-100"
             >
               {navItems.map((item, index) => (
                 <li key={index}>
-                  <a>{item.name}</a>
+                  <a
+                    href={`#${item.id}`}
+                    className={`${
+                      activeSection === item.id
+                        ? "text-secondary font-semibold"
+                        : ""
+                    }`}
+                  >
+                    {item.name}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
           <a className="text-xl text-white">Abdullah Al Omar</a>
         </div>
+
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-white">
             {navItems.map((item, index) => (
               <li key={index}>
-                <a>{item.name}</a>
+                <a
+                  href={`#${item.id}`}
+                  className={`transition duration-300 hover:text-secondary ${
+                    activeSection === item.id
+                      ? "text-secondary font-semibold"
+                      : ""
+                  }`}
+                >
+                  {item.name}
+                </a>
               </li>
             ))}
           </ul>
         </div>
-        <div className="navbar-end gap-6">
-          <div className="">
-            {/* <button>
-              <Image src={dark} alt="light mode" width={25} height={25} />
-            </button> */}
-          </div>
 
+        <div className="navbar-end gap-6">
           <motion.button
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8 }}
-            className="hidden sm:block px-4 py-1 rounded-md border-2 border-secondary hover:bg-secondary duration-700 text-black hover:text-white uppercase"
+            className="hidden sm:block px-4 py-1 rounded-md border-2 border-secondary hover:bg-secondary duration-700 text-stone-50 hover:text-white uppercase"
           >
             Download CV
           </motion.button>

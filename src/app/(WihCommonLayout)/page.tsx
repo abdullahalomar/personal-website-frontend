@@ -10,7 +10,6 @@ import Award from "@/components/UI/Award/Award";
 import Testimonial from "@/components/UI/Testimonial/Testimonial";
 import BlogsPage from "./blogs/page";
 import Experience from "@/components/UI/Experience/Experience";
-import Skill from "@/components/UI/Skill/Skill";
 import AllSkills from "@/components/UI/AllSkills/AllSkills";
 
 const page = () => {

@@ -1,13 +1,20 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { HiOutlineDownload } from "react-icons/hi";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { FaHome } from "react-icons/fa";
 import logo from "@/assets/logo/logo.png";
 import { motion } from "framer-motion";
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const router = useRouter();
+
+  const handleGoHome = () => {
+    router.push("/");
+  };
 
   return (
     <div
@@ -34,7 +41,7 @@ const Sidebar = () => {
       <div
         className={`transition-all duration-300 ${
           isCollapsed ? "w-0 overflow-hidden" : "w-20"
-        } h-72 bg-secondary shadow-md relative z-10 `}
+        } h-72 bg-secondary shadow-md relative z-10`}
       >
         {!isCollapsed && (
           <>
@@ -46,7 +53,16 @@ const Sidebar = () => {
               alt="logo"
             />
 
-            <div>{/* <ThemeToggle></ThemeToggle> */}</div>
+            {/* Home Button */}
+            <motion.button
+              onClick={handleGoHome}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="mt-3 mx-3 bg-primary p-3 rounded-full text-white shadow-lg"
+              title="Go to Home"
+            >
+              <FaHome fontSize={20} />
+            </motion.button>
 
             <motion.div
               whileHover={{ scale: 1.2 }}
