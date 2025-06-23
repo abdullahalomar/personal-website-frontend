@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Abdullah Al Omar",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html data-theme="mytheme" lang="en">
-      <body className="w-full">{children}</body>
+      <body className="w-full">
+        {children}
+        <Toaster richColors position="top-center" />
+      </body>
     </html>
   );
 }

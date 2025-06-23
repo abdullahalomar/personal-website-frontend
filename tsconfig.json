@@ -28,7 +28,8 @@
     ".next/types/**/*.ts",
     "src/components/UI/Skill/Skill.jsx",
     "src/components/UI/SkillSet/SkillSet.tsx",
-    "src/app/(WihCommonLayout)/contact/page.jsx"
+    "src/app/(WihCommonLayout)/contact/page.jsx",
+    "src/app/(WithDashboardLayout)/layout.tsx"
   ],
   "exclude": ["node_modules"]
 }
