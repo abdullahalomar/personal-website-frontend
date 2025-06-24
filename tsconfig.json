@@ -19,7 +19,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
@@ -29,7 +30,9 @@
     "src/components/UI/Skill/Skill.jsx",
     "src/components/UI/SkillSet/SkillSet.tsx",
     "src/app/(WihCommonLayout)/contact/page.jsx",
-    "src/app/(WithDashboardLayout)/layout.tsx"
+    "src/app/(WithDashboardLayout)/layout.tsx",
+    "src/app/(WithDashboardLayout)/Dashboard-portfolio/blogs/page.jsx",
+    "src/components/EditBlogModal/EditBlogModal.jsx"
   ],
   "exclude": ["node_modules"]
 }
