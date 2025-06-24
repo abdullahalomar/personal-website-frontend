@@ -33,7 +33,8 @@
     "src/app/(WithDashboardLayout)/layout.tsx",
     "src/app/(WithDashboardLayout)/Dashboard-portfolio/blogs/page.jsx",
     "src/components/EditBlogModal/EditBlogModal.jsx",
-    "src/app/(WithDashboardLayout)/Dashboard-portfolio/hero/page.jsx"
+    "src/app/(WithDashboardLayout)/Dashboard-portfolio/hero/page.jsx",
+    "src/components/EditAboutModal/EditAboutModal.jsx"
   ],
   "exclude": ["node_modules"]
 }
