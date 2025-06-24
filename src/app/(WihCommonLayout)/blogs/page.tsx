@@ -21,7 +21,7 @@ import blog5 from "@/assets/img/web-design.jpg";
 
 const BlogsPage = () => {
   return (
-    <div className="bg-[#e6f1fc] px-4 sm:px-8 md:px-16 lg:px-24">
+    <div className=" px-4 sm:px-8 md:px-16 lg:px-24">
       <div className="py-8 md:py-16">
         <p className="text-lg md:text-2xl text-secondary uppercase">
           Get Updates

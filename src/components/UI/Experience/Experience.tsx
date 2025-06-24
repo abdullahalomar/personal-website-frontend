@@ -17,7 +17,7 @@ const Experience = () => {
 
   return (
     <div className="my-28">
-      <div className="bg-[#25262F] py-20 px-8 md:px-16 lg:px-24 flex flex-col md:flex-row justify-between gap-6">
+      <div className="bg-[#393d5e] py-20 px-8 md:px-16 lg:px-24 flex flex-col md:flex-row justify-between gap-6">
         <div
           data-aos="fade-right"
           data-aos-offset="300"

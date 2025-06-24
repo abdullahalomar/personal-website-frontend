@@ -19,3 +19,12 @@ body {
 html {
   scroll-behavior: smooth;
 } */
+
+.bg-dots-light {
+  background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.dark .bg-dots-light {
+  background-image: radial-gradient(#334155 1px, transparent 1px);
+}

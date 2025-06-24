@@ -1,6 +1,6 @@
 import HeroSection from "@/components/UI/HeroSection/HeroSection";
 import Passion from "@/components/UI/Passion/Passion";
-import ProjectPage from "./projects/page";
+
 import MarqueText from "@/components/UI/MarqueText/MarqueText";
 import AboutPage from "./about/page";
 import ContactUsPage from "./contact-us/page";
@@ -11,6 +11,7 @@ import Testimonial from "@/components/UI/Testimonial/Testimonial";
 import BlogsPage from "./blogs/page";
 import Experience from "@/components/UI/Experience/Experience";
 import AllSkills from "@/components/UI/AllSkills/AllSkills";
+import ProjectPage from "./projects/page";
 
 const page = () => {
   return (
@@ -20,7 +21,7 @@ const page = () => {
       <Passion />
       <AboutPage />
       <MarqueText />
-      {/* <ProjectPage /> */}
+      <ProjectPage />
       <Education />
       {/* <Skill /> */}
       <AllSkills />

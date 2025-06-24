@@ -51,7 +51,7 @@ const AllSkills = () => {
   ];
 
   return (
-    <section className="pt-20 px-6 md:px-20 bg-base-100">
+    <section className="pt-20 px-6 md:px-20">
       <div className="max-w-6xl mx-auto text-center">
         <div className="">
           <p className="text-2xl text-secondary uppercase">My Skills</p>

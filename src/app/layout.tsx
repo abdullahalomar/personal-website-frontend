@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html data-theme="mytheme" lang="en">
-      <body className="w-full">
+      <body className="w-full bg-dots-light">
         {children}
         <Toaster richColors position="top-center" />
       </body>
