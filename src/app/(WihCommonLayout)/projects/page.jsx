@@ -60,7 +60,8 @@ const ProjectPage = () => {
   }, []);
 
   return (
-    <div className="px-6 md:px-16 lg:px-24 py-16 bg-gradient-to-b from-[#f9fafb] to-[#e5e7eb] dark:from-[#0f172a] dark:to-[#1e293b] transition-all duration-500">
+    // bg-gradient-to-b from-[#f9fafb] to-[#e5e7eb] dark:from-[#E2ECF6] dark:to-[#c4d7e9]
+    <div className="px-6 md:px-16 lg:px-24 py-16  transition-all duration-500">
       <div className="text-center mb-20">
         <p className="text-xl md:text-2xl text-primary uppercase tracking-wide">
           Portfolio

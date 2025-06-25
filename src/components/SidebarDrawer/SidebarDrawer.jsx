@@ -32,6 +32,9 @@ const SidebarDrawer = ({ children }) => {
               <Link href="/Dashboard-portfolio/about">About</Link>
             </li>
             <li>
+              <Link href="/Dashboard-portfolio/projects">Project</Link>
+            </li>
+            <li>
               <Link href="/Dashboard-portfolio/blogs">Education</Link>
             </li>
             <li>
