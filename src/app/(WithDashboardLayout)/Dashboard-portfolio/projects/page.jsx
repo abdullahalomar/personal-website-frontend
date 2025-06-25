@@ -5,11 +5,13 @@ import { toast } from "sonner";
 import axios from "axios";
 import Image from "next/image";
 import AddProjectModal from "@/components/AddProjectModal/AddProjectModal"; // Adjust path if needed
+import EditProjectModal from "@/components/EditProjectModal/EditProjectModal"; // Adjust path if needed
 
 const ProjectPage = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingProject, setEditingProject] = useState(null);
 
   useEffect(() => {
     fetchProjects();
@@ -42,8 +44,8 @@ const ProjectPage = () => {
     }
   };
 
-  const handleEdit = (id) => {
-    toast("Edit function will be implemented!");
+  const handleEdit = (project) => {
+    setEditingProject(project);
   };
 
   return (
@@ -63,6 +65,13 @@ const ProjectPage = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onProjectAdded={fetchProjects}
+      />
+
+      <EditProjectModal
+        isOpen={!!editingProject}
+        onClose={() => setEditingProject(null)}
+        project={editingProject}
+        onProjectUpdated={fetchProjects}
       />
 
       {loading ? (
@@ -102,7 +111,7 @@ const ProjectPage = () => {
                   </td>
                   <td className="px-4 py-3 text-right flex justify-end gap-4">
                     <button
-                      onClick={() => handleEdit(project.id)}
+                      onClick={() => handleEdit(project)}
                       className="text-blue-600 hover:text-blue-800"
                     >
                       <FaEdit />
