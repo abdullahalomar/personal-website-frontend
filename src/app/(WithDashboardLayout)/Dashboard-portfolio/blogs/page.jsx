@@ -37,46 +37,33 @@ const BlogPage = () => {
         `https://personal-website-server-chi.vercel.app/api/v1/blogs/${id}`
       );
       if (res.data.success) {
-        // Optimistic UI Update
         const updatedBlogs = blogs.filter((blog) => blog._id !== id);
         setBlogs(updatedBlogs);
-
-        // Refetch from server to ensure sync
         const { data } = await axios.get(
           "https://personal-website-server-chi.vercel.app/api/v1/blogs"
         );
-        setBlogs(data.data); // Adjust according to your API response structure
-
-        // Pagination logic
+        setBlogs(data.data);
         const totalRemainingBlogs = updatedBlogs.length;
         const totalPages = Math.ceil(totalRemainingBlogs / blogsPerPage);
         if (currentPage > totalPages) {
           setCurrentPage(totalPages || 1);
         }
-
         toast.success("Blog deleted successfully!");
       } else {
-        console.error("❌ Failed to delete blog");
         toast.error("Failed to delete blog!");
       }
     } catch (err) {
-      console.error("❌ Error while deleting blog", err);
+      console.error("Error while deleting blog", err);
       toast.error("Error while deleting blog!");
     }
   };
 
-  // Pagination Logic
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
   const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
   const totalPages = Math.ceil(blogs.length / blogsPerPage);
-
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  // timestamp
-  // BlogPage.js এ এই ফাংশনগুলো যোগ করুন:
-
-  // Enhanced date formatting
   const formatDate = (dateString) => {
     if (!dateString) return "N/A";
     const date = new Date(dateString);
@@ -99,13 +86,11 @@ const BlogPage = () => {
     });
   };
 
-  // Time ago function (optional)
   const timeAgo = (dateString) => {
     if (!dateString) return "N/A";
     const date = new Date(dateString);
     const now = new Date();
     const diffInHours = Math.floor((now - date) / (1000 * 60 * 60));
-
     if (diffInHours < 1) return "এইমাত্র";
     if (diffInHours < 24) return `${diffInHours} ঘন্টা আগে`;
     if (diffInHours < 168) return `${Math.floor(diffInHours / 24)} দিন আগে`;
@@ -113,20 +98,22 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="p-6">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold">📚 All Blogs</h2>
+    <div className="p-4 sm:p-6 text-white ">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-black">
+          📚 All Blogs
+        </h2>
         <AddBlogModal onSuccess={fetchBlogs} />
       </div>
 
       {loading ? (
-        <p className="text-center">Loading blogs...</p>
+        <p className="text-center text-gray-300">Loading blogs...</p>
       ) : currentBlogs.length === 0 ? (
-        <p className="text-center text-gray-500">No blogs found.</p>
+        <p className="text-center text-gray-400">No blogs found.</p>
       ) : (
-        <div className="overflow-x-auto">
-          <table className="table table-zebra w-full">
-            <thead className="bg-base-200">
+        <div className="overflow-x-auto bg-gray-800 rounded-lg shadow-md">
+          <table className="table w-full text-sm sm:text-base text-white">
+            <thead className="bg-gray-700 text-white">
               <tr>
                 <th>#</th>
                 <th>Image</th>
@@ -139,33 +126,35 @@ const BlogPage = () => {
             </thead>
             <tbody>
               {currentBlogs.map((blog, index) => (
-                <tr key={blog?._id}>
+                <tr key={blog?._id} className="hover:bg-gray-700 transition">
                   <td>{indexOfFirstBlog + index + 1}</td>
                   <td>
                     <Image
                       src={blog?.image}
                       alt="blog"
-                      className="w-20 h-14 object-cover rounded-md"
-                      height={100}
-                      width={100}
+                      width={80}
+                      height={60}
+                      className="rounded-md object-cover w-20 h-14"
                     />
                   </td>
-                  <td className="font-medium">{blog.title}</td>
-                  <td className="text-sm">
+                  <td className="max-w-[180px] font-medium truncate">
+                    {blog.title}
+                  </td>
+                  <td className="text-sm max-w-[220px] truncate">
                     {blog.description?.slice(0, 40)}...
                   </td>
-                  <td className="text-xs text-gray-600">
+                  <td className="text-xs text-gray-300">
                     <div>{formatDate(blog.createdAt)}</div>
                     {blog.updatedAt && blog.updatedAt !== blog.createdAt && (
-                      <div className="text-orange-600 text-xs">
+                      <div className="text-orange-400 text-xs">
                         Updated: {formatDate(blog.updatedAt)}
                       </div>
                     )}
                   </td>
-                  <td className="text-xs text-green-600">
+                  <td className="text-xs text-green-400">
                     {formatDate(blog.publishedAt)}
                   </td>
-                  <td className="flex justify-center gap-2">
+                  <td className="flex flex-wrap justify-center items-center gap-2">
                     <EditBlogModal blog={blog} onSuccess={fetchBlogs} />
                     <button
                       className="btn btn-sm btn-error text-white"

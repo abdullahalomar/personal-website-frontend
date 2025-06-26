@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import axios from "axios";
-
 import Image from "next/image";
 import { toast } from "sonner";
 import AddAboutModal from "@/components/AddAboutModal/AddAboutModal";
@@ -38,30 +37,26 @@ const AboutPage = () => {
         `https://personal-website-server-chi.vercel.app/api/v1/about/${id}`
       );
       if (res.data.success) {
-        // Optimistic UI Update
-        const updatedAbout = about.filter((about) => about._id !== id);
+        const updatedAbout = about.filter((item) => item._id !== id);
         setAbout(updatedAbout);
 
-        // Refetch from server to ensure sync
         const { data } = await axios.get(
           "https://personal-website-server-chi.vercel.app/api/v1/about"
         );
-        setAbout(data.data); // Adjust according to your API response structure
+        setAbout(data.data);
 
-        // Pagination logic
-        const totalRemainingAbout = updatedAbout.length;
-        const totalPages = Math.ceil(totalRemainingAbout / aboutPerPage);
+        const totalRemaining = updatedAbout.length;
+        const totalPages = Math.ceil(totalRemaining / aboutPerPage);
         if (currentPage > totalPages) {
           setCurrentPage(totalPages || 1);
         }
 
         toast.success("About deleted successfully!");
       } else {
-        console.error("❌ Failed to delete About");
         toast.error("Failed to delete about!");
       }
     } catch (err) {
-      console.error("❌ Error while deleting About", err);
+      console.error("Error while deleting About", err);
       toast.error("Error while deleting about!");
     }
   };
@@ -75,20 +70,22 @@ const AboutPage = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="p-6">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold">📚 All about</h2>
+    <div className="p-4 sm:p-6">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-800 ">
+          📚 All About
+        </h2>
         <AddAboutModal onSuccess={fetchAbout} />
       </div>
 
       {loading ? (
-        <p className="text-center">Loading about...</p>
+        <p className="text-center text-gray-500">Loading about...</p>
       ) : currentAbout.length === 0 ? (
         <p className="text-center text-gray-500">No about found.</p>
       ) : (
-        <div className="overflow-x-auto">
-          <table className="table table-zebra w-full">
-            <thead className="bg-base-200">
+        <div className="overflow-x-auto bg-white dark:bg-gray-900 dark:text-gray-200 rounded-lg shadow-md">
+          <table className="table w-full text-sm sm:text-base">
+            <thead className="bg-base-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200">
               <tr>
                 <th>#</th>
                 <th>Image</th>
@@ -100,31 +97,27 @@ const AboutPage = () => {
               </tr>
             </thead>
             <tbody>
-              {currentAbout.map((about, index) => (
-                <tr key={about?._id}>
+              {currentAbout.map((item, index) => (
+                <tr key={item._id}>
                   <td>{indexOfFirstAbout + index + 1}</td>
                   <td>
                     <Image
-                      src={about?.image}
+                      src={item.image}
                       alt="about"
-                      className="w-20 h-14 object-cover rounded-md"
-                      height={100}
-                      width={100}
+                      width={80}
+                      height={60}
+                      className="rounded-md object-cover w-20 h-14"
                     />
                   </td>
-
-                  <td className="text-sm">
-                    {about.description?.slice(0, 40)}...
-                  </td>
-                  <td className="font-medium">{about.occupation}</td>
-                  <td className="font-medium">{about.email}</td>
-                  <td className="font-medium">{about.phone}</td>
-
-                  <td className="flex justify-center gap-2">
-                    <EditAboutModal about={about} onSuccess={fetchAbout} />
+                  <td className="max-w-[180px] truncate">{item.description}</td>
+                  <td>{item.occupation}</td>
+                  <td className="whitespace-nowrap">{item.email}</td>
+                  <td className="whitespace-nowrap">{item.phone}</td>
+                  <td className="flex flex-wrap justify-center items-center gap-2">
+                    <EditAboutModal about={item} onSuccess={fetchAbout} />
                     <button
                       className="btn btn-sm btn-error text-white"
-                      onClick={() => handleDelete(about._id)}
+                      onClick={() => handleDelete(item._id)}
                     >
                       <FaTrash className="mr-1" /> Delete
                     </button>
@@ -134,7 +127,7 @@ const AboutPage = () => {
             </tbody>
           </table>
 
-          {/* Pagination UI */}
+          {/* Pagination */}
           <div className="flex justify-center mt-6">
             <div className="join">
               {[...Array(totalPages)].map((_, i) => (

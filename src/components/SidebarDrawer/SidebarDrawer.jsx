@@ -27,31 +27,31 @@ const SidebarDrawer = ({ children }) => {
           ></label>
           <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
             {/* Sidebar content here */}
-            <li>
+            <li className="mb-2">
               <Link href="/Dashboard-portfolio/blogs">Blog</Link>
             </li>
             <li>
               <Link href="/Dashboard-portfolio/hero">Hero</Link>
             </li>
-            <li>
+            <li className="my-2">
               <Link href="/Dashboard-portfolio/about">About</Link>
             </li>
             <li>
               <Link href="/Dashboard-portfolio/projects">Project</Link>
             </li>
-            <li>
+            <li className="my-2">
               <Link href="/Dashboard-portfolio/blogs">Education</Link>
             </li>
             <li>
               <Link href="/Dashboard-portfolio/blogs">Skills</Link>
             </li>
-            <li>
+            <li className="my-2">
               <Link href="/Dashboard-portfolio/blogs">Experience</Link>
             </li>
             <li>
               <Link href="/Dashboard-portfolio/blogs">Success Stories</Link>
             </li>
-            <li>
+            <li className="mt-10">
               <button onClick={logout} className="btn btn-error text-white">
                 Log Out
               </button>
