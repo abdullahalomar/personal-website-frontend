@@ -32,22 +32,6 @@ const config: Config = {
           jost: ["Jost", "sans-serif"],
         },
       },
-      // {
-      //   light: {
-      //     ...require("daisyui/src/theming/themes")["light"],
-      //     primary: "#1A2130",
-      //     secondary: "#83B4FF",
-      //   },
-      // },
-      // {
-      //   dark: {
-      //     ...require("daisyui/src/theming/themes")["dark"],
-      //     primary: "#83B4FF",
-      //     secondary: "#1A2130",
-      //   },
-      // },
-      // "dark",
-      // "light",
     ],
   },
 };
