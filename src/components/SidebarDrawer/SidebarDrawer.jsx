@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useAuth } from "@/context/AuthContext";
 
 const SidebarDrawer = ({ children }) => {
+  const { logout } = useAuth();
+
   return (
     <div>
       <div className="drawer lg:drawer-open">
@@ -45,6 +50,11 @@ const SidebarDrawer = ({ children }) => {
             </li>
             <li>
               <Link href="/Dashboard-portfolio/blogs">Success Stories</Link>
+            </li>
+            <li>
+              <button onClick={logout} className="btn btn-error text-white">
+                Log Out
+              </button>
             </li>
           </ul>
         </div>

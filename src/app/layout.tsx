@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "sonner";
+import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata: Metadata = {
   title: "Abdullah Al Omar",
@@ -15,7 +16,7 @@ export default function RootLayout({
   return (
     <html data-theme="mytheme" lang="en">
       <body className="w-full bg-dots-light">
-        {children}
+        <AuthProvider>{children}</AuthProvider>
         <Toaster richColors position="top-center" />
       </body>
     </html>
