@@ -1,4 +1,4 @@
-import HeroSection from "@/components/UI/HeroSection/HeroSection";
+// import HeroSection from "@/components/UI/HeroSection/HeroSection";
 import Passion from "@/components/UI/Passion/Passion";
 
 import MarqueText from "@/components/UI/MarqueText/MarqueText";
@@ -16,7 +16,7 @@ const page = () => {
   return (
     <div>
       <div className=""></div>
-      <HeroSection />
+      {/* <HeroSection /> */}
       <Passion />
       <AboutPage />
       <MarqueText />
