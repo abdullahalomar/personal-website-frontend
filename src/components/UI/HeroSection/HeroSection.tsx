@@ -425,40 +425,40 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleClick = () => {
-    const speakMessage = () => {
-      const message = new SpeechSynthesisUtterance(
-        "Hello and welcome! I'm Abdullah Al Omar, a passionate Software Quality Assurance Engineer. I ensure software quality through comprehensive testing, bug detection, and quality processes. Feel free to explore my work and expertise in QA engineering!"
-      );
-      message.lang = "en-US";
-      message.rate = 1;
-      message.pitch = 1;
+  // const handleClick = () => {
+  //   const speakMessage = () => {
+  //     const message = new SpeechSynthesisUtterance(
+  //       "Hello and welcome! I'm Abdullah Al Omar, a passionate Software Quality Assurance Engineer. I ensure software quality through comprehensive testing, bug detection, and quality processes. Feel free to explore my work and expertise in QA engineering!"
+  //     );
+  //     message.lang = "en-US";
+  //     message.rate = 1;
+  //     message.pitch = 1;
 
-      const voices = window.speechSynthesis.getVoices();
-      const preferredMaleVoices = [
-        "Google UK English Male",
-        "Microsoft David - English (United States)",
-        "Alex",
-        "Daniel",
-      ];
+  //     const voices = window.speechSynthesis.getVoices();
+  //     const preferredMaleVoices = [
+  //       "Google UK English Male",
+  //       "Microsoft David - English (United States)",
+  //       "Alex",
+  //       "Daniel",
+  //     ];
 
-      const maleVoice = voices.find((voice) =>
-        preferredMaleVoices.includes(voice.name)
-      );
+  //     const maleVoice = voices.find((voice) =>
+  //       preferredMaleVoices.includes(voice.name)
+  //     );
 
-      if (maleVoice) {
-        message.voice = maleVoice;
-      }
+  //     if (maleVoice) {
+  //       message.voice = maleVoice;
+  //     }
 
-      window.speechSynthesis.speak(message);
-    };
+  //     window.speechSynthesis.speak(message);
+  //   };
 
-    if (window.speechSynthesis.getVoices().length === 0) {
-      window.speechSynthesis.onvoiceschanged = speakMessage;
-    } else {
-      speakMessage();
-    }
-  };
+  //   if (window.speechSynthesis.getVoices().length === 0) {
+  //     window.speechSynthesis.onvoiceschanged = speakMessage;
+  //   } else {
+  //     speakMessage();
+  //   }
+  // };
   return (
     <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row justify-between items-center pt-10 sm:pt-10 md:pt-8 lg:pt-0 px-32 w-full min-h-screen relative overflow-hidden">
       {/* QA-themed Background */}
@@ -753,7 +753,7 @@ const HeroSection = () => {
           <div className="bg-white/10 backdrop-blur-sm shadow-lg w-[120px] md:w-[190px] pb-1.5 rounded-md">
             <button
               className="w-[120px] md:w-[190px] h-9 md:h-12 rounded-md uppercase text-white bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 transition duration-300 font-bold shadow-lg"
-              onClick={handleClick}
+              // onClick={handleClick}
             >
               Say Hello
             </button>
