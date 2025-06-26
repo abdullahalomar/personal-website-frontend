@@ -37,7 +37,7 @@
     "src/components/EditAboutModal/EditAboutModal.jsx",
     "src/app/(WihCommonLayout)/projects/page.jsx",
     "src/app/login/page.jsx",
-    "src/components/UI/HeroSection/HeroSection.jsx"
+    "src/components/UI/HeroSection/HeroSection.tsx"
   ],
   "exclude": ["node_modules"]
 }

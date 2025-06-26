@@ -372,24 +372,30 @@ import { motion } from "framer-motion";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
-import gridImage from "@/assets/logo/grid.svg";
-import { FaFacebookF } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa6";
-import { FaLinkedinIn } from "react-icons/fa6";
-import { FaYoutube } from "react-icons/fa6";
 import img1 from "@/assets/icons/content.png";
 import img2 from "@/assets/icons/montage.png";
-import img3 from "@/assets/icons/programming.png";
-import img4 from "@/assets/icons/video-editing-app.png";
-import img5 from "@/assets/icons/pages.png";
+
+import {
+  FaFacebookF,
+  FaGithub,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa6";
+
+interface TestResult {
+  id: number;
+  type: string;
+  status: "PASS" | "FAIL" | "PENDING";
+  x: number;
+  y: number;
+}
 
 const HeroSection = () => {
-  const [testResults, setTestResults] = useState([]);
+  const [testResults, setTestResults] = useState<TestResult[]>([]);
 
   useEffect(() => {
     Aos.init();
 
-    // Generate random test results for animation
     const generateTestResults = () => {
       const testTypes = [
         "Unit Test",
@@ -399,8 +405,8 @@ const HeroSection = () => {
         "UI Test",
         "Performance",
       ];
-      const statuses = ["PASS", "FAIL", "PENDING"];
-      const results = [];
+      const statuses: TestResult["status"][] = ["PASS", "FAIL", "PENDING"];
+      const results: TestResult[] = [];
 
       for (let i = 0; i < 8; i++) {
         results.push({
@@ -447,13 +453,12 @@ const HeroSection = () => {
       window.speechSynthesis.speak(message);
     };
 
-    if (speechSynthesis.getVoices().length === 0) {
-      speechSynthesis.onvoiceschanged = speakMessage;
+    if (window.speechSynthesis.getVoices().length === 0) {
+      window.speechSynthesis.onvoiceschanged = speakMessage;
     } else {
       speakMessage();
     }
   };
-
   return (
     <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row justify-between items-center pt-10 sm:pt-10 md:pt-8 lg:pt-0 px-32 w-full min-h-screen relative overflow-hidden">
       {/* QA-themed Background */}
