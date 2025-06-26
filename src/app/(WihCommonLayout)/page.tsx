@@ -1,4 +1,4 @@
-// import HeroSection from "@/components/UI/HeroSection/HeroSection";
+import HeroSection from "@/components/UI/HeroSection/HeroSection";
 import Passion from "@/components/UI/Passion/Passion";
 
 import MarqueText from "@/components/UI/MarqueText/MarqueText";
@@ -11,7 +11,6 @@ import BlogsPage from "./blogs/page";
 import Experience from "@/components/UI/Experience/Experience";
 import AllSkills from "@/components/UI/AllSkills/AllSkills";
 import ProjectPage from "./projects/page";
-import HeroSection from "@/components/UI/HeroSection/HeroSection";
 
 const page = () => {
   return (
