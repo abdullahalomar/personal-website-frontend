@@ -11,12 +11,13 @@ import BlogsPage from "./blogs/page";
 import Experience from "@/components/UI/Experience/Experience";
 import AllSkills from "@/components/UI/AllSkills/AllSkills";
 import ProjectPage from "./projects/page";
+import HeroSection from "@/components/UI/HeroSection/HeroSection";
 
 const page = () => {
   return (
     <div>
       <div className=""></div>
-      {/* <HeroSection /> */}
+      <HeroSection />
       <Passion />
       <AboutPage />
       <MarqueText />
