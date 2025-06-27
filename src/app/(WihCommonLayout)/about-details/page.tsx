@@ -5,6 +5,16 @@ import Image from "next/image";
 import profile from "@/assets/img/hero-img.png";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+interface AboutType {
+  image: string;
+  occupation: string;
+  phone: string;
+  email: string;
+  description: string;
+}
 
 const calculateAge = (birthDate: string | number | Date) => {
   const today = new Date();
@@ -20,6 +30,26 @@ const calculateAge = (birthDate: string | number | Date) => {
 };
 
 const AboutDetailsPage = () => {
+  const [about, setAbout] = useState<AboutType[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  const fetchAbout = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.get(
+        "https://personal-website-server-chi.vercel.app/api/v1/about"
+      );
+      setAbout(res.data?.data || []);
+    } catch (err) {
+      console.error("Failed to fetch about", err);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchAbout();
+  }, []);
+  const data = about[0] || {};
   const age = calculateAge("2000-02-17");
   return (
     <section className="px-8 md:px-16 lg:px-24 py-20 bg-base-100">
@@ -51,10 +81,7 @@ const AboutDetailsPage = () => {
             <span className="font-semibold text-secondary">
               Abdullah Al Omar
             </span>
-            , a Software Quality Assurance Engineer passionate about delivering
-            reliable, high-quality products. With a strong background in manual,
-            automation, and API testing, I aim to ensure every software release
-            is bug-free and user-friendly.
+            {data.description}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base-content">
@@ -74,16 +101,16 @@ const AboutDetailsPage = () => {
             </div>
             <div>
               <p>
-                <span className="font-bold text-secondary">Profession:</span> QA
-                Engineer
+                <span className="font-bold text-secondary">Profession:</span>{" "}
+                {data.occupation}
               </p>
               <p>
                 <span className="font-bold text-secondary">Email:</span>{" "}
-                abdullahalomar048@gmail.com
+                {data.email}
               </p>
               <p>
-                <span className="font-bold text-secondary">Phone:</span> +88
-                01704951688
+                <span className="font-bold text-secondary">Phone:</span>{" "}
+                {data.phone}
               </p>
             </div>
           </div>

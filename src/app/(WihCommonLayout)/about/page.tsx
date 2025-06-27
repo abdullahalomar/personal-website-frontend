@@ -11,6 +11,15 @@ import { HiOutlineDownload } from "react-icons/hi";
 import { BiSolidShow } from "react-icons/bi";
 import Link from "next/link";
 import CountUp from "react-countup";
+import axios from "axios";
+
+interface AboutType {
+  image: string;
+  occupation: string;
+  phone: string;
+  email: string;
+  description: string;
+}
 
 const calculateAge = (birthDate: string | number | Date) => {
   const today = new Date();
@@ -27,6 +36,8 @@ const calculateAge = (birthDate: string | number | Date) => {
 
 const AboutPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [about, setAbout] = useState<AboutType[]>([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     Aos.init();
@@ -36,6 +47,23 @@ const AboutPage = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+  const fetchAbout = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.get(
+        "https://personal-website-server-chi.vercel.app/api/v1/about"
+      );
+      setAbout(res.data?.data || []);
+    } catch (err) {
+      console.error("Failed to fetch about", err);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchAbout();
+  }, []);
+  const data = about[0] || {};
   // age calculate
   // const calculateAge = (birthDate: string | number | Date) => {
   //   const today = new Date();
@@ -63,8 +91,8 @@ const AboutPage = () => {
           <Image
             className="hover:-translate-y-6 transition duration-700"
             src={profile}
-            height={600}
-            width={600}
+            height={5068}
+            width={3685}
             alt="about image"
           />
 
@@ -87,8 +115,7 @@ const AboutPage = () => {
             Ensuring Excellence
           </h1>
           <p className="text-lg sm:text-xl">
-            {`${aboutText.substring(0, 240)}`}
-            {aboutText.length > 10 && "..."}
+            {(data.description || "").substring(0, 240)}...
             <Link
               className="bg-primary py-0 px-3 text-white rounded-lg text-sm"
               href="/about-details"
@@ -123,10 +150,10 @@ const AboutPage = () => {
                 </div>
                 <div className="table-row">
                   <div className="table-cell">
-                    <p className="text-lg font-bold">Occupation</p>
+                    <p className="text-lg font-bold">Profession</p>
                   </div>
                   <div className="table-cell">
-                    <p className="text-lg">Software QA Engineer</p>
+                    <p className="text-lg">{data?.occupation}</p>
                   </div>
                 </div>
               </div>
@@ -138,7 +165,7 @@ const AboutPage = () => {
                     <p className="font-bold text-lg">Phone</p>
                   </div>
                   <div className="table-cell">
-                    <p className="text-lg">+88 01704951688</p>
+                    <p className="text-lg">{data?.phone}</p>
                   </div>
                 </div>
                 <div className="table-row">
@@ -146,7 +173,7 @@ const AboutPage = () => {
                     <p className="text-lg font-bold">Email</p>
                   </div>
                   <div className="table-cell">
-                    <p className="text-lg">abdullahalomar048@gmail.com</p>
+                    <p className="text-lg">{data?.email}</p>
                   </div>
                 </div>
                 <div className="table-row">
