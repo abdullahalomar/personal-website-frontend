@@ -498,17 +498,16 @@ const HeroSection = () => {
       </div>
 
       {/* Bug Detection Scanner */}
-      {/* <motion.div
-        className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
-        animate={{
-          y: [0, window.innerHeight || 800, 0],
-        }}
+      <motion.div
+        className="absolute left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
+        initial={{ top: "-10%" }}
+        animate={{ top: ["-10%", "110%"] }}
         transition={{
           duration: 6,
           repeat: Infinity,
           ease: "linear",
         }}
-      /> */}
+      />
 
       {/* Quality Metrics Dashboard */}
       <div className="absolute top-10 right-10 bg-black/30 backdrop-blur-sm rounded-lg p-4 text-white text-sm">
