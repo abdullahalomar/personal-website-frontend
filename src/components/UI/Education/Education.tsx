@@ -12,7 +12,7 @@ const Education = () => {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row gap-10 px-8 md:px-16 lg:px-24 mt-28">
+    <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row gap-10 px-8 md:px-16 lg:px-24">
       <div>
         <div className="mb-8 max-w-[800px]">
           <p className="text-2xl text-secondary uppercase mb-2">Education</p>

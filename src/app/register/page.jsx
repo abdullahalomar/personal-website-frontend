@@ -33,33 +33,62 @@ const RegisterPage = () => {
   };
 
   return (
-    <form onSubmit={handleRegister} className="space-y-4 p-6">
-      <input
-        name="name"
-        placeholder="Name"
-        className="border p-2 w-full"
-        onChange={handleChange}
-        required
-      />
-      <input
-        name="email"
-        placeholder="Email"
-        className="border p-2 w-full"
-        onChange={handleChange}
-        required
-      />
-      <input
-        name="password"
-        type="password"
-        placeholder="Password"
-        className="border p-2 w-full"
-        onChange={handleChange}
-        required
-      />
-      <button type="submit" className="bg-green-600 text-white px-4 py-2">
-        Register
-      </button>
-    </form>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-100 to-blue-200 px-4 py-10">
+      <h1 className="text-5xl font-bold">
+        This is only for me not you. gate out from here.
+      </h1>
+      {/* <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl">
+        <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
+          Create an Account
+        </h2>
+        <form onSubmit={handleRegister} className="space-y-4">
+          <div>
+            <label className="block text-gray-700 mb-1">Name</label>
+            <input
+              name="name"
+              placeholder="Enter your name"
+              className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 mb-1">Email</label>
+            <input
+              name="email"
+              type="email"
+              placeholder="Enter your email"
+              className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 mb-1">Password</label>
+            <input
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+              className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg transition duration-300"
+          >
+            Register
+          </button>
+        </form>
+        <p className="text-center text-sm text-gray-500 mt-4">
+          Already have an account?{" "}
+          <a href="/login" className="text-green-600 hover:underline">
+            Login here
+          </a>
+        </p>
+      </div> */}
+    </div>
   );
 };
 

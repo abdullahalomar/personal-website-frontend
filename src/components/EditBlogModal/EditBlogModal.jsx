@@ -150,10 +150,10 @@ const EditBlogModal = ({ blog, onSuccess }) => {
 
       {/* Modal */}
       {isOpen && (
-        <div className="modal modal-open">
+        <div className="modal modal-open ">
           <div className="modal-box w-11/12 max-w-2xl">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="font-bold text-lg">✏️ Edit Blog</h3>
+              <h3 className="font-bold text-lg text-black">✏️ Edit Blog</h3>
               <button
                 className="btn btn-sm btn-circle btn-ghost"
                 onClick={handleClose}
@@ -162,7 +162,7 @@ const EditBlogModal = ({ blog, onSuccess }) => {
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 ">
               {/* Title */}
               <div>
                 <label className="label">
@@ -172,7 +172,7 @@ const EditBlogModal = ({ blog, onSuccess }) => {
                 </label>
                 <input
                   type="text"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full text-black"
                   placeholder="Enter blog title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
@@ -188,7 +188,7 @@ const EditBlogModal = ({ blog, onSuccess }) => {
                   </span>
                 </label>
                 <textarea
-                  className="textarea textarea-bordered w-full h-32"
+                  className="textarea textarea-bordered w-full h-32 text-black"
                   placeholder="Enter blog description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
@@ -220,7 +220,7 @@ const EditBlogModal = ({ blog, onSuccess }) => {
                   <input
                     type="file"
                     accept="image/*"
-                    className="file-input file-input-bordered flex-1"
+                    className="file-input file-input-bordered flex-1 text-black"
                     onChange={handleImageChange}
                   />
                   <div className="btn btn-outline btn-sm">
@@ -240,7 +240,7 @@ const EditBlogModal = ({ blog, onSuccess }) => {
               <div className="modal-action">
                 <button
                   type="button"
-                  className="btn btn-ghost"
+                  className="btn btn-danger"
                   onClick={handleClose}
                   disabled={loading || imageUploading}
                 >

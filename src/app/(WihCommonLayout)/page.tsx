@@ -16,20 +16,44 @@ const page = () => {
   return (
     <div>
       <div className=""></div>
-      <HeroSection />
-      <Passion />
-      <AboutPage />
-      <MarqueText />
-      <ProjectPage />
-      <Education />
+      <div className="">
+        <HeroSection />
+      </div>
+      <div>
+        <Passion />
+      </div>
+      <div>
+        <AboutPage />
+      </div>
+      <div className="my-20">
+        <MarqueText />
+      </div>
+      <div>
+        <ProjectPage />
+      </div>
+      <div className="my-28">
+        <Education />
+      </div>
       {/* <Skill /> */}
-      <AllSkills />
-      <Experience />
-      <Award />
-      <MarqueText />
+      <div>
+        <AllSkills />
+      </div>
+      <div className="my-20">
+        <Experience />
+      </div>
+      <div>
+        <Award />
+      </div>
+      <div className="my-20">
+        <MarqueText />
+      </div>
       {/* <Testimonial /> */}
-      <ContactUsPage />
-      <BlogsPage />
+      <div>
+        <ContactUsPage />
+      </div>
+      <div className="my-20">
+        <BlogsPage />
+      </div>
     </div>
   );
 };

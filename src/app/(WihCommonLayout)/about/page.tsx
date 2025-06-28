@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import profile from "@/assets/img/profile-image-web.png";
@@ -88,11 +89,9 @@ const AboutPage = () => {
       {/* Main Content */}
       <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row justify-between items-center lg:gap-28 gap-10 px-6 sm:px-12 lg:px-24 mt-14 pb-0 md:pb-0 lg:pb-6 xl:pb-12">
         <div className="relative lg:w-2/5" data-aos="zoom-out-right">
-          <Image
+          <img
             className="hover:-translate-y-6 transition duration-700"
-            src={profile}
-            height={5068}
-            width={3685}
+            src={data?.image}
             alt="about image"
           />
 

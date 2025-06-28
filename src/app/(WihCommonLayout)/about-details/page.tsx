@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
@@ -60,12 +61,10 @@ const AboutDetailsPage = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <Image
-            src={profile}
+          <img
+            src={data?.image}
             alt="About Abdullah"
             className="rounded-2xl shadow-xl w-[400] h-[640px] object-cover"
-            height={500}
-            width={500}
           />
         </motion.div>
 

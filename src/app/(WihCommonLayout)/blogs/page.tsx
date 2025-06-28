@@ -1,175 +1,110 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
-import "swiper/css/free-mode";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import "./blog.css";
-
-// import required modules
-import { FreeMode, Autoplay } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
-import blog1 from "@/assets/img/Programming-software.jpg";
-import blog2 from "@/assets/img/artificial-intelligence.jpg";
-import blog3 from "@/assets/img/data-analytics.jpg";
-import blog4 from "@/assets/img/information-technology.jpg";
-import blog5 from "@/assets/img/web-design.jpg";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Link from "next/link";
+
+// ✅ Proper Blog Type Interface
+interface Blog {
+  _id: string;
+  image: string;
+  title: string;
+  description: string;
+  createdAt: string;
+}
 
 const BlogsPage = () => {
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  const fetchBlogs = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.get(
+        "https://personal-website-server-chi.vercel.app/api/v1/blogs"
+      );
+      setBlogs(res.data?.data || []);
+    } catch (err) {
+      console.error("Failed to fetch blogs", err);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  };
+
   return (
-    <div className=" px-4 sm:px-8 md:px-16 lg:px-24">
-      <div className="py-8 md:py-16">
+    <div className="sm:px-8 md:px-16 lg:px-24">
+      <div className="mb-12 text-center">
         <p className="text-lg md:text-2xl text-secondary uppercase">
           Get Updates
         </p>
-        <h1 className="text-2xl md:text-5xl font-bold">Recent Blog</h1>
+        <h1 className="text-2xl md:text-5xl font-bold">Recent Blogs</h1>
       </div>
-      <div className="pb-14">
+
+      {loading ? (
+        <div className="text-center py-10">Loading...</div>
+      ) : (
         <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
-          freeMode={true}
-          autoplay={{
-            delay: 1000,
-            disableOnInteraction: false,
-          }}
-          modules={[FreeMode, Autoplay]}
+          slidesPerView={1}
+          spaceBetween={20}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          navigation={true}
           breakpoints={{
-            "@0.00": {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            "@0.75": {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            "@1.00": {
-              slidesPerView: 3,
-              spaceBetween: 10,
-            },
-            "@1.50": {
-              slidesPerView: 3,
-              spaceBetween: 10,
-            },
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
           }}
-          className="mySwiper"
+          modules={[Autoplay, Pagination, Navigation]}
+          className="w-full"
         >
-          <SwiperSlide>
-            <div className="card bg-base-100 max-w-96 h-80 shadow-xl">
-              <figure>
-                <Image
-                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700 h-[538px]"
-                  src={blog1}
-                  alt="Blog Image"
-                  width={600}
-                  height={600}
-                />
-              </figure>
-              <div className="card-body">
-                <div className="badge badge-secondary">NEW</div>
-                <a
-                  href=""
-                  className="card-title hover:text-secondary duration-500"
-                >
-                  Programming Software
-                </a>
+          {blogs.map((blog) => (
+            <SwiperSlide key={blog._id}>
+              <div className="card bg-base-100 shadow-xl border border-gray-200">
+                <figure className="overflow-hidden h-[200px] md:h-[250px] lg:h-[200px]">
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    width={400}
+                    height={250}
+                    className="w-full object-cover transition-transform duration-700 hover:scale-110"
+                  />
+                </figure>
+                <div className="card-body p-4">
+                  <div className="badge badge-secondary mb-2">
+                    {formatDate(blog.createdAt)}
+                  </div>
+                  <Link
+                    href={`/blogs/${blog._id}`}
+                    className="card-title text-lg font-bold hover:text-secondary duration-300"
+                  >
+                    {blog.title}
+                  </Link>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="card bg-base-100 max-w-96 h-80 shadow-xl">
-              <figure>
-                <Image
-                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700"
-                  src={blog2}
-                  alt="Blog Image"
-                  width={600}
-                  height={300}
-                />
-              </figure>
-              <div className="card-body">
-                <div className="badge badge-secondary">NEW</div>
-                <a
-                  href=""
-                  className="card-title hover:text-secondary duration-500"
-                >
-                  Artificial-Intelligence
-                </a>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="card bg-base-100 max-w-96 h-80 shadow-xl">
-              <figure>
-                <Image
-                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700 "
-                  src={blog3}
-                  alt="Blog Image"
-                  width={600}
-                  height={600}
-                />
-              </figure>
-              <div className="card-body">
-                <div className="badge badge-secondary">NEW</div>
-                <a
-                  href=""
-                  className="card-title hover:text-secondary duration-500"
-                >
-                  Data-Analytics
-                </a>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="card bg-base-100 max-w-96 h-80 shadow-xl">
-              <figure>
-                <Image
-                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700 "
-                  src={blog4}
-                  alt="Blog Image"
-                  width={600}
-                  height={600}
-                />
-              </figure>
-              <div className="card-body">
-                <div className="badge badge-secondary">NEW</div>
-                <a
-                  href=""
-                  className="card-title hover:text-secondary duration-500"
-                >
-                  Information-Technology
-                </a>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="card bg-base-100 max-w-96 h-80 shadow-xl">
-              <figure>
-                <Image
-                  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-125 duration-700 "
-                  src={blog5}
-                  alt="Blog Image"
-                  width={600}
-                  height={600}
-                />
-              </figure>
-              <div className="card-body">
-                <div className="badge badge-secondary">NEW</div>
-                <a
-                  href=""
-                  className="card-title hover:text-secondary duration-500"
-                >
-                  Web-Design
-                </a>
-              </div>
-            </div>
-          </SwiperSlide>
+            </SwiperSlide>
+          ))}
         </Swiper>
-      </div>
+      )}
     </div>
   );
 };

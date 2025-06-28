@@ -42,9 +42,9 @@ const ContactUsPage = () => {
   };
 
   return (
-    <div className="px-8 md:px-16 lg:px-24 mb-20">
+    <div className="px-8 md:px-16 lg:px-24">
       <ToastContainer position="top-center" autoClose={3000} />
-      <div className="text-center mb-16">
+      <div className="text-center mb-12">
         <p className="text-2xl text-secondary uppercase">Contact me</p>
         <h1 className="text-5xl font-bold">Let’s Start A New Conversation</h1>
       </div>

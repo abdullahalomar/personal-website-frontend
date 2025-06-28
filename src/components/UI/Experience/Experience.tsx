@@ -16,7 +16,7 @@ const Experience = () => {
   const GraphicsDesign = "Graphic Design";
 
   return (
-    <div className="my-28">
+    <div className="">
       <div className="bg-[#393d5e] py-20 px-8 md:px-16 lg:px-24 flex flex-col md:flex-row justify-between gap-6">
         <div
           data-aos="fade-right"

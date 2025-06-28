@@ -11,7 +11,7 @@ const Award = () => {
     Aos.init();
   }, []);
   return (
-    <div className="px-8 md:px-16 lg:px-24 pb-28 md:pb-8 lg:8">
+    <div className="px-8 md:px-16 lg:px-24">
       <div>
         <div className="text-center mb-12">
           <p className="text-2xl text-secondary uppercase">Success Stories</p>
