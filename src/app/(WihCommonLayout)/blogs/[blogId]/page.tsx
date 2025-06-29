@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import axios from "axios";
 import Image from "next/image";
+import DOMPurify from "dompurify";
 
 const BlogDetailsPage = () => {
   const { blogId } = useParams() as { blogId: string };
@@ -74,9 +75,13 @@ const BlogDetailsPage = () => {
       </div>
 
       {/* Description */}
-      <div className="prose prose-lg max-w-none text-gray-700">
-        {blog.description}
-      </div>
+      {/* Description */}
+      <div
+        className="prose prose-lg max-w-none text-gray-700"
+        dangerouslySetInnerHTML={{
+          __html: DOMPurify.sanitize(blog.description as string),
+        }}
+      ></div>
     </div>
   );
 };

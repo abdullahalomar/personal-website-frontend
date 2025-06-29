@@ -5,29 +5,68 @@ import { FaEdit, FaImage, FaTimes } from "react-icons/fa";
 import axios from "axios";
 import { toast } from "sonner";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+import { EditorState, convertToRaw, ContentState } from "draft-js";
+import draftToHtml from "draftjs-to-html";
+import htmlToDraft from "html-to-draftjs";
+
+// Dynamic import for Editor to avoid SSR issues
+const Editor = dynamic(
+  () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
+  { ssr: false }
+);
 
 const EditBlogModal = ({ blog, onSuccess }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [editorState, setEditorState] = useState(() =>
+    EditorState.createEmpty()
+  );
   const [image, setImage] = useState("");
   const [imageFile, setImageFile] = useState(null);
   const [imagePreview, setImagePreview] = useState("");
   const [loading, setLoading] = useState(false);
   const [imageUploading, setImageUploading] = useState(false);
 
-  // Initialize form data when blog prop changes
+  // Load CSS on client side
+  useEffect(() => {
+    import("react-draft-wysiwyg/dist/react-draft-wysiwyg.css");
+  }, []);
+
   useEffect(() => {
     if (blog) {
       setTitle(blog.title || "");
       setDescription(blog.description || "");
       setImage(blog.image || "");
       setImagePreview(blog.image || "");
+
+      // Convert HTML description to EditorState
+      if (blog.description) {
+        const contentBlock = htmlToDraft(blog.description);
+        if (contentBlock) {
+          const contentState = ContentState.createFromBlockArray(
+            contentBlock.contentBlocks
+          );
+          const editorState = EditorState.createWithContent(contentState);
+          setEditorState(editorState);
+        }
+      } else {
+        setEditorState(EditorState.createEmpty());
+      }
     }
   }, [blog]);
 
+  const onEditorStateChange = (editorState) => {
+    setEditorState(editorState);
+    const htmlContent = draftToHtml(
+      convertToRaw(editorState.getCurrentContent())
+    );
+    setDescription(htmlContent);
+  };
+
   const handleImageChange = (e) => {
-    const file = e.target.files[0];
+    const file = e.target.files?.[0];
     if (file) {
       setImageFile(file);
       const reader = new FileReader();
@@ -46,12 +85,7 @@ const EditBlogModal = ({ blog, onSuccess }) => {
       setImageUploading(true);
       const response = await axios.post(
         `https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_IMGBB_KEY}`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+        formData
       );
 
       if (response.data.success) {
@@ -81,7 +115,6 @@ const EditBlogModal = ({ blog, onSuccess }) => {
     try {
       let finalImageUrl = image;
 
-      // Upload new image if selected
       if (imageFile) {
         const uploadedImageUrl = await uploadImageToImgBB(imageFile);
         if (!uploadedImageUrl) {
@@ -121,6 +154,7 @@ const EditBlogModal = ({ blog, onSuccess }) => {
   const resetForm = () => {
     setTitle("");
     setDescription("");
+    setEditorState(EditorState.createEmpty());
     setImage("");
     setImageFile(null);
     setImagePreview("");
@@ -128,19 +162,50 @@ const EditBlogModal = ({ blog, onSuccess }) => {
 
   const handleClose = () => {
     setIsOpen(false);
-    // Reset form to original blog data
     if (blog) {
       setTitle(blog.title || "");
       setDescription(blog.description || "");
       setImage(blog.image || "");
       setImagePreview(blog.image || "");
       setImageFile(null);
+
+      // Reset editor state with blog content
+      if (blog.description) {
+        const contentBlock = htmlToDraft(blog.description);
+        if (contentBlock) {
+          const contentState = ContentState.createFromBlockArray(
+            contentBlock.contentBlocks
+          );
+          const editorState = EditorState.createWithContent(contentState);
+          setEditorState(editorState);
+        }
+      } else {
+        setEditorState(EditorState.createEmpty());
+      }
     }
+  };
+
+  const editorToolbar = {
+    options: ["inline", "blockType", "list", "textAlign", "link", "history"],
+    inline: {
+      options: ["bold", "italic", "underline", "strikethrough"],
+    },
+    blockType: {
+      options: ["Normal", "H1", "H2", "H3", "H4", "H5", "H6"],
+    },
+    list: {
+      options: ["unordered", "ordered"],
+    },
+    textAlign: {
+      options: ["left", "center", "right"],
+    },
+    link: {
+      options: ["link"],
+    },
   };
 
   return (
     <>
-      {/* Edit Button */}
       <button
         className="btn btn-sm btn-info text-white"
         onClick={() => setIsOpen(true)}
@@ -148,12 +213,11 @@ const EditBlogModal = ({ blog, onSuccess }) => {
         <FaEdit className="mr-1" /> Edit
       </button>
 
-      {/* Modal */}
       {isOpen && (
-        <div className="modal modal-open ">
-          <div className="modal-box w-11/12 max-w-2xl">
+        <div className="modal modal-open">
+          <div className="modal-box w-11/12 max-w-2xl text-black">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="font-bold text-lg text-black">✏️ Edit Blog</h3>
+              <h3 className="font-bold text-lg">✏️ Edit Blog</h3>
               <button
                 className="btn btn-sm btn-circle btn-ghost"
                 onClick={handleClose}
@@ -162,7 +226,7 @@ const EditBlogModal = ({ blog, onSuccess }) => {
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4 ">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* Title */}
               <div>
                 <label className="label">
@@ -180,20 +244,27 @@ const EditBlogModal = ({ blog, onSuccess }) => {
                 />
               </div>
 
-              {/* Description */}
+              {/* ✅ Rich Text Editor */}
               <div>
                 <label className="label">
                   <span className="label-text font-medium">
                     Description <span className="text-red-500">*</span>
                   </span>
                 </label>
-                <textarea
-                  className="textarea textarea-bordered w-full h-32 text-black"
-                  placeholder="Enter blog description"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  required
-                />
+                <div className="border rounded p-2 min-h-[200px]">
+                  <Editor
+                    editorState={editorState}
+                    onEditorStateChange={onEditorStateChange}
+                    toolbar={editorToolbar}
+                    placeholder="Edit blog content..."
+                    editorStyle={{
+                      minHeight: "150px",
+                      padding: "10px",
+                      border: "1px solid #e5e7eb",
+                      borderRadius: "4px",
+                    }}
+                  />
+                </div>
               </div>
 
               {/* Image Upload */}
@@ -201,8 +272,6 @@ const EditBlogModal = ({ blog, onSuccess }) => {
                 <label className="label">
                   <span className="label-text font-medium">Blog Image</span>
                 </label>
-
-                {/* Current/Preview Image */}
                 {imagePreview && (
                   <div className="mb-3">
                     <p className="text-sm text-gray-600 mb-2">Current Image:</p>
@@ -215,7 +284,6 @@ const EditBlogModal = ({ blog, onSuccess }) => {
                     />
                   </div>
                 )}
-
                 <div className="flex items-center gap-2">
                   <input
                     type="file"
@@ -228,7 +296,6 @@ const EditBlogModal = ({ blog, onSuccess }) => {
                     {imageFile ? "Change" : "Upload"} Image
                   </div>
                 </div>
-
                 {imageUploading && (
                   <p className="text-sm text-blue-600 mt-2">
                     Uploading image...

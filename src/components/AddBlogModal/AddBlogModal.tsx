@@ -3,14 +3,40 @@
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
+import dynamic from "next/dynamic";
+import { EditorState, convertToRaw } from "draft-js";
+import draftToHtml from "draftjs-to-html";
 
-const AddBlogModal = ({ onSuccess }: { onSuccess?: () => void }) => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+// Dynamic import for Editor to avoid SSR issues
+const Editor = dynamic(
+  () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
+  { ssr: false }
+);
+
+// Import CSS only on client side
+
+interface AddBlogModalProps {
+  onSuccess?: () => void;
+}
+
+const AddBlogModal = ({ onSuccess }: AddBlogModalProps) => {
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [editorState, setEditorState] = useState(() =>
+    EditorState.createEmpty()
+  );
   const [image, setImage] = useState<File | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const onEditorStateChange = (editorState: EditorState) => {
+    setEditorState(editorState);
+    const htmlContent = draftToHtml(
+      convertToRaw(editorState.getCurrentContent())
+    );
+    setDescription(htmlContent);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
@@ -32,7 +58,6 @@ const AddBlogModal = ({ onSuccess }: { onSuccess?: () => void }) => {
 
       const res = await axios.post(
         "https://personal-website-server-chi.vercel.app/api/v1/blogs",
-
         {
           title,
           description,
@@ -44,12 +69,12 @@ const AddBlogModal = ({ onSuccess }: { onSuccess?: () => void }) => {
         toast.success("✅ Blog added successfully!");
         setTitle("");
         setDescription("");
+        setEditorState(EditorState.createEmpty());
         setImage(null);
         (
           document.getElementById("add_blog_modal") as HTMLDialogElement
         )?.close();
 
-        // 🔄 call parent refresh function
         onSuccess && onSuccess();
       } else {
         toast.error("❌ Failed to post blog.");
@@ -60,6 +85,25 @@ const AddBlogModal = ({ onSuccess }: { onSuccess?: () => void }) => {
     }
 
     setLoading(false);
+  };
+
+  const editorToolbar = {
+    options: ["inline", "blockType", "list", "textAlign", "link", "history"],
+    inline: {
+      options: ["bold", "italic", "underline", "strikethrough"],
+    },
+    blockType: {
+      options: ["Normal", "H1", "H2", "H3", "H4", "H5", "H6"],
+    },
+    list: {
+      options: ["unordered", "ordered"],
+    },
+    textAlign: {
+      options: ["left", "center", "right"],
+    },
+    link: {
+      options: ["link"],
+    },
   };
 
   return (
@@ -76,7 +120,7 @@ const AddBlogModal = ({ onSuccess }: { onSuccess?: () => void }) => {
       </button>
 
       <dialog id="add_blog_modal" className="modal">
-        <div className="modal-box">
+        <div className="modal-box text-black">
           <h3 className="font-bold text-lg mb-4">📝 Add Blog</h3>
           <form onSubmit={handleSubmit} className="space-y-3">
             <input
@@ -86,12 +130,23 @@ const AddBlogModal = ({ onSuccess }: { onSuccess?: () => void }) => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
-            <textarea
-              placeholder="Description"
-              className="textarea textarea-bordered w-full"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
+
+            {/* ✅ Rich Text Editor */}
+            <div className="border rounded p-2 min-h-[200px]">
+              <Editor
+                editorState={editorState}
+                onEditorStateChange={onEditorStateChange}
+                toolbar={editorToolbar}
+                placeholder="Write blog description here..."
+                editorStyle={{
+                  minHeight: "150px",
+                  padding: "10px",
+                  border: "1px solid #e5e7eb",
+                  borderRadius: "4px",
+                }}
+              />
+            </div>
+
             <input
               type="file"
               accept="image/*"
