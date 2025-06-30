@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import axios from "axios";
-import AddBlogModal from "@/components/AddBlogModal/AddBlogModal";
-import EditBlogModal from "@/components/EditBlogModal/EditBlogModal";
+// import AddBlogModal from "@/components/AddBlogModal/AddBlogModal";
+// import EditBlogModal from "@/components/EditBlogModal/EditBlogModal";
 import Image from "next/image";
 import { toast } from "sonner";
 
@@ -103,7 +103,7 @@ const BlogPage = () => {
         <h2 className="text-xl sm:text-2xl font-bold text-black">
           📚 All Blogs
         </h2>
-        <AddBlogModal onSuccess={fetchBlogs} />
+        {/* <AddBlogModal onSuccess={fetchBlogs} /> */}
       </div>
 
       {loading ? (
@@ -155,7 +155,7 @@ const BlogPage = () => {
                     {formatDate(blog.publishedAt)}
                   </td>
                   <td className="flex flex-wrap justify-center items-center gap-2">
-                    <EditBlogModal blog={blog} onSuccess={fetchBlogs} />
+                    {/* <EditBlogModal blog={blog} onSuccess={fetchBlogs} /> */}
                     <button
                       className="btn btn-sm btn-error text-white"
                       onClick={() => handleDelete(blog._id)}
