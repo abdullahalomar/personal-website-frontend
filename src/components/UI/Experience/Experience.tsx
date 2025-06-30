@@ -17,7 +17,8 @@ const Experience = () => {
 
   return (
     <div className="">
-      <div className="bg-[#393d5e] py-20 px-8 md:px-16 lg:px-24 flex flex-col md:flex-row justify-between gap-6">
+      <div className="bg-[#393d5e] py-20 px-8 md:px-16 lg:px-24 flex flex-col md:flex-row justify-between gap-6 overflow-hidden relative">
+        <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] bg-[size:20px_20px] opacity-10 pointer-events-none z-0" />
         <div
           data-aos="fade-right"
           data-aos-offset="300"

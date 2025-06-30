@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const AllSkills = () => {
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
   }, []);
 
   const [activeCategory, setActiveCategory] = useState("Testing");
@@ -24,7 +24,7 @@ const AllSkills = () => {
     ],
     Tools: [
       { name: "Postman", icon: "/skills/postman.png" },
-      { name: "JMeter", icon: "/skills/jMeter.png" },
+      { name: "JMeter", icon: "/skills/jmeter.png" },
       { name: "Selenium", icon: "/skills/icons8-selenium-100.png" },
       { name: "Git & GitHub", icon: "/skills/github-100.png" },
     ],
@@ -37,27 +37,26 @@ const AllSkills = () => {
     ],
   };
 
+  // Soft pastel gradient backgrounds
   const bgColors = [
-    "from-pink-500 to-rose-400",
-    "from-purple-500 to-indigo-500",
-    "from-blue-500 to-sky-400",
-    "from-cyan-500 to-teal-400",
-    "from-green-500 to-lime-400",
-    "from-yellow-500 to-amber-400",
-    "from-orange-500 to-red-400",
-    "from-emerald-500 to-teal-300",
-    "from-fuchsia-500 to-pink-400",
-    "from-sky-500 to-indigo-400",
+    "from-pink-200 to-rose-100",
+    "from-purple-200 to-indigo-100",
+    "from-blue-200 to-sky-100",
+    "from-cyan-200 to-teal-100",
+    "from-green-200 to-lime-100",
+    "from-yellow-200 to-amber-100",
+    "from-orange-200 to-red-100",
+    "from-emerald-200 to-teal-100",
+    "from-fuchsia-200 to-pink-100",
+    "from-sky-200 to-indigo-100",
   ];
 
   return (
     <section className="px-6 md:px-20">
       <div className="max-w-6xl mx-auto text-center">
-        <div className="">
+        <div>
           <p className="text-2xl text-secondary uppercase">My Skills</p>
-          <h1 className="text-5xl font-bold text-primary">
-            Growing Over Times
-          </h1>
+          <h1 className="text-5xl font-bold text-primary">Growing Over Time</h1>
         </div>
 
         {/* Tabs */}
@@ -68,7 +67,7 @@ const AllSkills = () => {
               onClick={() => setActiveCategory(cat)}
               className={`btn btn-sm rounded-full transition ${
                 activeCategory === cat
-                  ? "btn-primary text-white"
+                  ? "btn-primary text-white shadow"
                   : "btn-outline"
               }`}
             >
@@ -82,11 +81,11 @@ const AllSkills = () => {
           {skillData[activeCategory].map((skill, index) => (
             <div
               key={index}
-              data-aos="fade-up"
+              data-aos="zoom-in-up"
               data-aos-delay={index * 100}
               className={`card bg-gradient-to-br ${
                 bgColors[index % bgColors.length]
-              } text-white rounded-2xl shadow-md transform transition-all duration-500 hover:scale-105 hover:rotate-1 hover:shadow-2xl`}
+              } text-gray-800 rounded-2xl shadow hover:shadow-xl transition-all duration-500 hover:scale-105 hover:rotate-1`}
             >
               <div className="card-body flex flex-col items-center justify-center gap-3 p-6">
                 <Image
