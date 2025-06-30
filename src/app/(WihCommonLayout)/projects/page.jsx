@@ -106,7 +106,7 @@ const ProjectPage = () => {
                 <button
                   onClick={() =>
                     handleOpenModal(
-                      <div className="w-full">
+                      <div className="max-w-80">
                         <h3 className="font-bold text-lg mb-2">
                           {project.title}
                         </h3>

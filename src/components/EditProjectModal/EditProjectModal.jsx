@@ -17,12 +17,12 @@ const Editor = dynamic(
   { ssr: false }
 );
 
-// Import CSS only on client side
-if (typeof window !== "undefined") {
-  import("react-draft-wysiwyg/dist/react-draft-wysiwyg.css");
-}
-
 const EditProjectModal = ({ isOpen, onClose, project, onProjectUpdated }) => {
+  // Import CSS only on client side
+  useEffect(() => {
+    import("react-draft-wysiwyg/dist/react-draft-wysiwyg.css");
+  }, []);
+
   const [formData, setFormData] = useState({
     title: "",
     subTitle: "",

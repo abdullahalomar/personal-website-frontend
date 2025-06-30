@@ -12,11 +12,6 @@ const Editor = dynamic(
   { ssr: false }
 );
 
-// Import CSS only on client side
-if (typeof window !== "undefined") {
-  import("react-draft-wysiwyg/dist/react-draft-wysiwyg.css");
-}
-
 const AddProjectModal = ({ isOpen, onClose, onProjectAdded }) => {
   const [formData, setFormData] = useState({
     title: "",
