@@ -6,7 +6,7 @@ import axios from "axios";
 import AddBlogModal from "@/components/AddBlogModal/AddBlogModal";
 import EditBlogModal from "@/components/EditBlogModal/EditBlogModal";
 import Image from "next/image";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
@@ -23,7 +23,6 @@ const BlogPage = () => {
       setBlogs(res.data?.data || []);
     } catch (err) {
       console.error("Failed to fetch blogs", err);
-      toast.error("Failed to fetch blogs!");
     }
     setLoading(false);
   };
@@ -33,11 +32,6 @@ const BlogPage = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this blog?"
-    );
-    if (!confirmDelete) return;
-
     try {
       const res = await axios.delete(
         `https://personal-website-server-chi.vercel.app/api/v1/blogs/${id}`
@@ -45,6 +39,10 @@ const BlogPage = () => {
       if (res.data.success) {
         const updatedBlogs = blogs.filter((blog) => blog._id !== id);
         setBlogs(updatedBlogs);
+        const { data } = await axios.get(
+          "https://personal-website-server-chi.vercel.app/api/v1/blogs"
+        );
+        setBlogs(data.data);
         const totalRemainingBlogs = updatedBlogs.length;
         const totalPages = Math.ceil(totalRemainingBlogs / blogsPerPage);
         if (currentPage > totalPages) {
@@ -76,6 +74,18 @@ const BlogPage = () => {
     });
   };
 
+  const formatDateTime = (dateString) => {
+    if (!dateString) return "N/A";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
+
   const timeAgo = (dateString) => {
     if (!dateString) return "N/A";
     const date = new Date(dateString);
@@ -88,7 +98,7 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="p-4 sm:p-6 text-white">
+    <div className="p-4 sm:p-6 text-white ">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
         <h2 className="text-xl sm:text-2xl font-bold text-black">
           📚 All Blogs
@@ -125,7 +135,6 @@ const BlogPage = () => {
                       width={80}
                       height={60}
                       className="rounded-md object-cover w-20 h-14"
-                      priority={index < 3}
                     />
                   </td>
                   <td className="max-w-[180px] font-medium truncate">
@@ -159,19 +168,12 @@ const BlogPage = () => {
             </tbody>
           </table>
 
-          {/* Pagination */}
-          <div className="flex justify-center mt-6 pb-4">
+          {/* Pagination UI */}
+          <div className="flex justify-center mt-6">
             <div className="join">
-              <button
-                className="join-item btn"
-                onClick={() => paginate(Math.max(1, currentPage - 1))}
-                disabled={currentPage === 1}
-              >
-                «
-              </button>
-              {Array.from({ length: totalPages }, (_, i) => (
+              {[...Array(totalPages)].map((_, i) => (
                 <button
-                  key={i + 1}
+                  key={i}
                   className={`join-item btn ${
                     currentPage === i + 1 ? "btn-active" : ""
                   }`}
@@ -180,13 +182,6 @@ const BlogPage = () => {
                   {i + 1}
                 </button>
               ))}
-              <button
-                className="join-item btn"
-                onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
-                disabled={currentPage === totalPages}
-              >
-                »
-              </button>
             </div>
           </div>
         </div>

@@ -7,6 +7,8 @@ import axios from "axios";
 import Image from "next/image";
 import AddProjectModal from "@/components/AddProjectModal/AddProjectModal";
 import EditProjectModal from "@/components/EditProjectModal/EditProjectModal";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import CSS
 
 const ProjectPage = () => {
   const [projects, setProjects] = useState([]);
@@ -27,22 +29,32 @@ const ProjectPage = () => {
       .finally(() => setLoading(false));
   };
 
-  const handleDelete = async (id) => {
-    const confirm = window.confirm(
-      "Are you sure you want to delete this project?"
-    );
-    if (!confirm) return;
-
-    try {
-      await axios.delete(
-        `https://personal-website-server-chi.vercel.app/api/v1/projects/${id}`
-      );
-      toast.success("Project deleted successfully!");
-      fetchProjects();
-    } catch (error) {
-      toast.error("Failed to delete project!");
-      console.error(error);
-    }
+  const handleDelete = (id) => {
+    confirmAlert({
+      title: "Confirm Deletion",
+      message: "Are you sure you want to delete this project?",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: async () => {
+            try {
+              await axios.delete(
+                `https://personal-website-server-chi.vercel.app/api/v1/projects/${id}`
+              );
+              toast.success("Project deleted successfully!");
+              fetchProjects();
+            } catch (error) {
+              toast.error("Failed to delete project!");
+              console.error(error);
+            }
+          },
+        },
+        {
+          label: "No",
+          onClick: () => {},
+        },
+      ],
+    });
   };
 
   const handleEdit = (project) => {
