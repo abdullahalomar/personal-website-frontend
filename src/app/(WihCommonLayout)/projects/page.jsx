@@ -3,7 +3,6 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import ProjectDetailsModal from "@/components/utils/projectDetailsModal";
 import { GrView } from "react-icons/gr";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -18,18 +17,7 @@ const gradientColors = [
 
 const ProjectPage = () => {
   const [projects, setProjects] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModalContent, setIsModalContent] = useState(null);
-
-  const handleOpenModal = (content) => {
-    setIsModalContent(content);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalContent(null);
-    setIsModalOpen(false);
-  };
+  const [modalContent, setModalContent] = useState(null);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -104,9 +92,9 @@ const ProjectPage = () => {
 
               <div className="flex justify-center md:justify-end">
                 <button
-                  onClick={() =>
-                    handleOpenModal(
-                      <div className="max-w-80">
+                  onClick={() => {
+                    setModalContent(
+                      <div className="">
                         <h3 className="font-bold text-lg mb-2">
                           {project.title}
                         </h3>
@@ -130,7 +118,7 @@ const ProjectPage = () => {
                             <Link
                               href={project.gitLink || "#"}
                               target="_blank"
-                              className="underline text-blue-100 hover:text-white"
+                              className="underline text-blue-700 hover:text-slate-800"
                             >
                               {project.gitLink || "N/A"}
                             </Link>
@@ -140,15 +128,16 @@ const ProjectPage = () => {
                             <Link
                               href={project.demoLink || "#"}
                               target="_blank"
-                              className="underline text-blue-100 hover:text-white"
+                              className="underline text-blue-700 hover:text-slate-800"
                             >
                               {project.demoLink || "N/A"}
                             </Link>
                           </p>
                         </div>
                       </div>
-                    )
-                  }
+                    );
+                    document.getElementById("project_modal").showModal();
+                  }}
                   className="absolute top-4 right-4 bg-white text-black rounded-full p-2 shadow-md hover:scale-110 hover:rotate-12 transition"
                 >
                   <GrView size={20} />
@@ -159,9 +148,17 @@ const ProjectPage = () => {
         ))}
       </div>
 
-      <ProjectDetailsModal isOpen={isModalOpen} onClose={handleCloseModal}>
-        {isModalContent}
-      </ProjectDetailsModal>
+      {/* DaisyUI Modal */}
+      <dialog id="project_modal" className="modal">
+        <div className="modal-box w-11/12 max-w-5xl">
+          {modalContent}
+          <div className="modal-action">
+            <form method="dialog">
+              <button className="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 };
