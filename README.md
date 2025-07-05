@@ -2,7 +2,7 @@
 
 Welcome to the official **frontend source code** of my personal portfolio website, designed and developed to represent myself as a web designer, WordPress developer, and tech content creator.
 
-🔗 **Live Website:** [https://abdullahalomar.vercel.app](https://abdullahalomar.vercel.app)
+🔗 **Live Website:** [https://abdullah-al-omar.vercel.app/](https://abdullah-al-omar.vercel.app/)
 
 ---
 
