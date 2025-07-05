@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌟 Abdullah Al Omar — Personal Portfolio Website
 
-## Getting Started
+Welcome to the official **frontend source code** of my personal portfolio website, designed and developed to represent myself as a web designer, WordPress developer, and tech content creator.
 
-First, run the development server:
+🔗 **Live Website:** [https://abdullahalomar.vercel.app](https://abdullahalomar.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧾 About This Website
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This website serves as my **professional identity on the web**, where visitors can learn about my:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- 💼 Professional Skills & Tech Stack
+- 🧠 Projects and Case Studies
+- 📰 Blog Posts with tech tips and tutorials
+- 📩 Contact Form for collaboration or freelance work
+- 📱 Fully responsive design for all devices
 
-## Learn More
+Whether you are a recruiter, client, or fellow developer — this site gives you a clear picture of who I am and what I do.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- ✅ Built with **Next.js** and **Tailwind CSS**
+- 🎨 Interactive and responsive **UI/UX**
+- ✍️ Blog and project content powered by **Sanity CMS**
+- 📬 Fully functional **Contact form**
+- ☁️ Deployed with **Vercel**, ensuring fast loading
+- 🌙 **Dark mode** support (optional)
+- 🔒 Secured dashboard with authentication
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Category      | Technology             |
+| ------------- | ---------------------- |
+| Framework     | Next.js                |
+| Styling       | Tailwind CSS, DaisyUI  |
+| CMS           | Sanity.io              |
+| Backend APIs  | Node.js, Express.js    |
+| Deployment    | Vercel                 |
+| Email Service | EmailJS (contact form) |
+| Image Hosting | Cloudinary / imageBB   |
+
+---
+
+## 📂 Project Structure
